@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://q1fwprbyesxb"]
+
+[ext_resource type="Script" uid="uid://nxv3rb2srnqn" path="res://scripts/elements/heart_pickup.gd" id="1_epdrw"]
+[ext_resource type="PackedScene" uid="uid://i5wl1iwh7q3l" path="res://assets/models/props/pickup_heart/pickup_heart.glb" id="2_rv7h2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tylk0"]
+radius = 1.1
+
+[node name="HeartPickup" type="Node3D" unique_id=225753502]
+script = ExtResource("1_epdrw")
+
+[node name="Model" type="Node3D" parent="." unique_id=9055733]
+
+[node name="Heart" parent="Model" unique_id=464711791 instance=ExtResource("2_rv7h2")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1.5, 0)
+
+[node name="Glow" type="OmniLight3D" parent="Model" unique_id=311053105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+light_color = Color(1, 0.35, 0.45, 1)
+light_energy = 1.5
+omni_range = 4.0
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1295304119]
+collision_mask = 0
+monitoring = false
+
+[node name="Shape" type="CollisionShape3D" parent="Area3D" unique_id=2023571331]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("SphereShape3D_tylk0")

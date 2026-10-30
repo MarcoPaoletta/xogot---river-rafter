@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://56d2137euce8"]
+
+[ext_resource type="Script" uid="uid://b4s4bwmtqfvny" path="res://scripts/elements/fish_jump.gd" id="1_3lpkn"]
+[ext_resource type="PackedScene" uid="uid://856baudhgo8i" path="res://assets/models/props/fish/fish.glb" id="2_b5x3q"]
+[ext_resource type="PackedScene" uid="uid://d0ckrc061y47y" path="res://scenes/fx/splash_burst.tscn" id="2_wkoea"]
+
+[node name="FishJump" type="Node3D" unique_id=822468765]
+script = ExtResource("1_3lpkn")
+splash_scene = ExtResource("2_wkoea")
+
+[node name="Fish" type="Node3D" parent="." unique_id=1744837904]
+
+[node name="Model" parent="Fish" unique_id=1183611037 instance=ExtResource("2_b5x3q")]
+transform = Transform3D(-5.6824803e-09, 0, 0.13, 0, 0.13, 0, -0.13, 0, -5.6824803e-09, 0, 0, 0)

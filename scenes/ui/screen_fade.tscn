@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dj8v3bc1b48sc"]
+
+[ext_resource type="Script" uid="uid://b6c7lwa3mqoeg" path="res://scripts/ui/screen_fade.gd" id="1_qmxyt"]
+
+[node name="ScreenFade" type="CanvasLayer" unique_id=1385406504]
+layer = 100
+script = ExtResource("1_qmxyt")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=43676445]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.03, 0.08, 0.1, 1)

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tilt Landscape – 5 Game Concepts</title>
+<style>
+  body { margin:0; font-family:-apple-system, Helvetica, Arial, sans-serif; background:#0f1220; color:#e9ecff; line-height:1.45; }
+  header, main, footer { max-width:1100px; margin:0 auto; padding:0 16px; }
+  header { padding-top:24px; }
+  h1 { margin:0 0 6px; font-size:28px; }
+  .muted { color:#9aa3c7; }
+  #tiltBtn { margin:10px 0 4px; padding:10px 16px; border:0; border-radius:10px; background:#7cf2c4; color:#0b2a20; font-weight:bold; font-size:15px; }
+  #tiltStatus { color:#9aa3c7; font-size:13px; margin-left:8px; }
+  .card { background:#181c30; border-radius:18px; overflow:hidden; margin:22px 0; }
+  .card svg { display:block; width:100%; height:auto; }
+  .body { padding:16px 18px 20px; }
+  .body h2 { margin:0 0 2px; font-size:22px; }
+  .tag { color:#7cf2c4; font-size:13px; font-weight:bold; letter-spacing:.04em; text-transform:uppercase; }
+  .grid { display:flex; flex-wrap:wrap; gap:12px; }
+  .box { background:rgba(255,255,255,.05); border-radius:12px; padding:10px 12px; flex:1 1 240px; }
+  .box h3 { margin:0 0 6px; font-size:14px; color:#ffcf6e; }
+  .box ul { margin:0; padding-left:18px; font-size:14px; }
+  .meter { font-size:13px; color:#9aa3c7; margin-top:10px; }
+  a { color:#7cf2c4; }
+  footer { padding-bottom:40px; }
+</style>
+</head>
+<body>
+
+<!-- Shared SVG definitions -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="pine">
+      <rect x="-8" y="-25" width="16" height="25" style="fill:var(--trunk, #5a3a22)"/>
+      <path d="M0 -75 L-50 -22 L50 -22Z"/>
+      <path d="M0 -95 L-40 -45 L40 -45Z"/>
+      <path d="M0 -115 L-30 -65 L30 -65Z"/>
+    </g>
+    <g id="sheep">
+      <ellipse cx="0" cy="22" rx="30" ry="7" fill="#000" opacity=".15"/>
+      <rect x="-15" y="8" width="5" height="15" fill="#333"/>
+      <rect x="10" y="8" width="5" height="15" fill="#333"/>
+      <g fill="#fff">
+        <circle cx="-12" cy="0" r="12"/><circle cx="0" cy="-8" r="12"/><circle cx="12" cy="0" r="12"/>
+        <circle cx="0" cy="5" r="12"/><circle cx="-5" cy="-3" r="12"/><circle cx="8" cy="-5" r="12"/>
+      </g>
+      <ellipse cx="24" cy="-3" rx="8" ry="10" fill="#333"/>
+    </g>
+    <g id="phone">
+      <rect x="-46" y="-26" width="92" height="52" rx="8" fill="#000" opacity=".5"/>
+      <rect x="-40" y="-20" width="80" height="40" rx="6" fill="none" stroke="#fff" stroke-width="3"/>
+      <circle cx="32" cy="0" r="3" fill="#fff"/>
+    </g>
+    <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ec8ff"/><stop offset="1" stop-color="#e6f6ff"/></linearGradient>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9a5a"/><stop offset="1" stop-color="#ffd9a0"/></linearGradient>
+    <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd3ff"/><stop offset="1" stop-color="#dff4ff"/></linearGradient>
+    <linearGradient id="sky4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb38a"/><stop offset="1" stop-color="#ffe6c7"/></linearGradient>
+    <linearGradient id="sky5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a0f2e"/><stop offset="1" stop-color="#1d2b4a"/></linearGradient>
+    <radialGradient id="marbleG" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#ffffff"/><stop offset=".25" stop-color="#6ad1ff"/><stop offset="1" stop-color="#1a4fa8"/></radialGradient>
+    <radialGradient id="sunGlow"><stop offset="0" stop-color="#fff4c2" stop-opacity=".9"/><stop offset="1" stop-color="#fff4c2" stop-opacity="0"/></radialGradient>
+    <radialGradient id="warmGlow"><stop offset="0" stop-color="#ffc85a" stop-opacity=".85"/><stop offset="1" stop-color="#ffc85a" stop-opacity="0"/></radialGradient>
+    <radialGradient id="wispGlow"><stop offset="0" stop-color="#ffffff"/><stop offset=".2" stop-color="#7cf2ff" stop-opacity=".85"/><stop offset="1" stop-color="#7cf2ff" stop-opacity="0"/></radialGradient>
+  </defs>
+</svg>
+
+<header>
+  <h1>Tilt Landscape: 5 Game Concepts</h1>
+  <p class="muted">Every concept is a 3D game played in landscape and steered by tilting the iPhone. The concept art is drawn in code (SVG).</p>
+  <p class="muted">Open this page in <b>Safari</b> and tap the button to make the hero in each picture follow your phone's tilt. The Files preview doesn't run scripts, so there you only see the static pictures.</p>
+  <button id="tiltBtn" type="button">Enable tilt preview</button><span id="tiltStatus">demo sway</span>
+</header>
+
+<main>
+
+<!-- 1 MARBLE VALLEY -->
+<section class="card">
+<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="540" fill="url(#sky1)"/>
+  <circle cx="780" cy="90" r="100" fill="url(#sunGlow)"/><circle cx="780" cy="90" r="34" fill="#fff4c2"/>
+  <path d="M0 300 L120 230 L240 280 L380 210 L520 270 L660 220 L800 260 L960 215 L960 540 L0 540Z" fill="#b6d6f0"/>
+  <polygon points="50,380 260,460 470,380 470,420 260,500 50,420" fill="#8a5a3b"/>
+  <polygon points="50,380 260,300 470,380 260,460" fill="#7bd36a"/>
+  <polygon points="460,300 620,360 780,300 780,340 620,400 460,340" fill="#8a5a3b"/>
+  <polygon points="460,300 620,240 780,300 620,360" fill="#8ee07a"/>
+  <polygon points="730,200 830,240 930,200 930,240 830,280 730,240" fill="#8a5a3b"/>
+  <polygon points="730,200 830,160 930,200 830,240" fill="#9be888"/>
+  <g fill="#c8945e"><rect x="420" y="352" width="18" height="10"/><rect x="442" y="341" width="18" height="10"/><rect x="464" y="330" width="18" height="10"/><rect x="486" y="319" width="18" height="10"/><rect x="508" y="308" width="18" height="10"/><rect x="530" y="297" width="18" height="10"/></g>
+  <use href="#pine" fill="#2f8f4e" transform="translate(140 380) scale(.7)"/>
+  <use href="#pine" fill="#3aa35b" transform="translate(360 420) scale(.55)"/>
+  <use href="#pine" fill="#2f8f4e" transform="translate(700 290) scale(.5)"/>
+  <use href="#pine" fill="#3aa35b" transform="translate(860 195) scale(.36)"/>
+  <g fill="#ff5fa2">
+    <path d="M600 282 L610 294 L600 306 L590 294Z"><animateTransform attributeName="transform" type="translate" values="0 0;0 -8;0 0" dur="1.6s" repeatCount="indefinite"/></path>
+    <path d="M650 262 L660 274 L650 286 L640 274Z"><animateTransform attributeName="transform" type="translate" values="0 -8;0 0;0 -8" dur="1.6s" repeatCount="indefinite"/></path>
+    <path d="M820 172 L830 184 L820 196 L810 184Z"><animateTransform attributeName="transform" type="translate" values="0 0;0 -8;0 0" dur="1.8s" repeatCount="indefinite"/></path>
+  </g>
+  <g class="hero" data-x="260" data-y="380" data-rx="120" data-ry="40" data-rot="0" transform="translate(260 380)">
+    <g>
+      <animateTransform class="sway" attributeName="transform" type="translate" values="-100 0;100 0;-100 0" dur="4s" repeatCount="indefinite"/>
+      <ellipse cx="6" cy="22" rx="28" ry="9" fill="#000" opacity=".25"/>
+      <circle r="26" fill="url(#marbleG)"/>
+    </g>
+  </g>
+  <g class="phone" transform="translate(870 480)"><use href="#phone"><animateTransform class="sway" attributeName="transform" type="rotate" values="-20;20;-20" dur="4s" repeatCount="indefinite"/></use></g>
+</svg>
+<div class="body">
+  <div class="tag">Physics puzzle-platformer · Easiest to build</div>
+  <h2>1. Marble Valley</h2>
+  <p>Tilt the world to roll a glass marble across floating grassy islands, narrow bridges, and ramps. Collect gems, don't fall off, and reach the goal flag before time runs out.</p>
+  <div class="grid">
+    <div class="box"><h3>Tilt controls</h3><ul><li>Tilt sets the gravity direction, so the marble rolls downhill</li><li>Optional: the level tilts a little for visual feedback</li><li>Tap to jump (optional)</li></ul></div>
+    <div class="box"><h3>Game loop</h3><ul><li>Short levels (30–90 s)</li><li>Gems unlock new islands</li><li>Star rating by time</li></ul></div>
+    <div class="box"><h3>Free asset packs (CC0)</h3><ul><li>Quaternius: Stylized Nature MegaKit</li><li>Quaternius: Ultimate Nature Pack</li><li>Poly Haven: sky HDRI and rock/wood textures</li></ul></div>
+  </div>
+  <div class="meter"><b>Godot:</b> RigidBody3D sphere, CSG or GridMap islands, Area3D gems, follow camera. <b>Difficulty:</b> ★☆☆☆☆</div>
+</div>
+</section>
+
+<!-- 2 CANYON RUNNER -->
+<section class="card">
+<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="540" fill="url(#sky2)"/>
+  <circle cx="480" cy="170" r="120" fill="url(#sunGlow)"/><circle cx="480" cy="170" r="40" fill="#fff0c0"/>
+  <polygon points="0,540 440,210 520,210 960,540" fill="#c8703c"/>
+  <g fill="#78321a" opacity=".35"><rect x="410" y="230" width="140" height="4"/><rect x="320" y="280" width="320" height="6"/><rect x="190" y="360" width="580" height="9"/><rect x="60" y="470" width="840" height="13"/></g>
+  <polygon points="440,210 430,60 380,95 330,45 270,85 210,35 150,75 90,25 0,55 0,540" fill="#9c4a2a"/>
+  <polygon points="520,210 530,60 580,95 630,45 690,85 750,35 810,75 870,25 960,55 960,540" fill="#b5582f"/>
+  <g stroke="#501e0f" stroke-opacity=".4" stroke-width="3">
+    <line x1="440" y1="190" x2="0" y2="500"/><line x1="435" y1="160" x2="0" y2="420"/><line x1="430" y1="130" x2="0" y2="330"/>
+    <line x1="520" y1="190" x2="960" y2="500"/><line x1="525" y1="160" x2="960" y2="420"/><line x1="530" y1="130" x2="960" y2="330"/>
+  </g>
+  <g fill="none" stroke="#7cf2c4">
+    <ellipse cx="480" cy="240" rx="12" ry="10" stroke-width="2" opacity=".4"/>
+    <ellipse cx="520" cy="290" rx="40" ry="32" stroke-width="4" opacity=".65"/>
+    <ellipse cx="430" cy="370" rx="95" ry="76" stroke-width="8" opacity=".9"/>
+  </g>
+  <g class="hero" data-x="480" data-y="430" data-rx="200" data-ry="50" data-rot="28" transform="translate(480 430)">
+    <g>
+      <animateTransform class="sway" attributeName="transform" type="translate" values="-150 0;150 0;-150 0" dur="4s" repeatCount="indefinite"/>
+      <animateTransform class="sway" attributeName="transform" type="rotate" values="-20;20;-20" dur="4s" additive="sum" repeatCount="indefinite"/>
+      <path d="M-14 18 L0 55 L14 18Z" fill="#ffb450"><animate attributeName="opacity" values="1;.4;1" dur=".2s" repeatCount="indefinite"/></path>
+      <path d="M0 -30 L80 20 L20 14 L0 22 L-20 14 L-80 20Z" fill="#e8ecf5"/>
+      <path d="M0 -20 L10 4 L-10 4Z" fill="#3a6bd9"/>
+    </g>
+  </g>
+  <g class="phone" transform="translate(870 480)"><use href="#phone"><animateTransform class="sway" attributeName="transform" type="rotate" values="-20;20;-20" dur="4s" repeatCount="indefinite"/></use></g>
+</svg>
+<div class="body">
+  <div class="tag">Endless flyer · Arcade</div>
+  <h2>2. Canyon Runner</h2>
+  <p>Pilot a small ship low through a desert canyon at sunset. Bank around rock pillars, fly through rings for a boost, and survive as long as you can while the speed keeps rising.</p>
+  <div class="grid">
+    <div class="box"><h3>Tilt controls</h3><ul><li>Tilt left/right to bank and steer</li><li>Tilt forward/back to dive or climb</li><li>Hold a finger on the screen to boost</li></ul></div>
+    <div class="box"><h3>Game loop</h3><ul><li>Endless run, scored by distance and rings</li><li>Unlock ship skins</li><li>Daily seeded canyon</li></ul></div>
+    <div class="box"><h3>Free asset packs (CC0)</h3><ul><li>Quaternius: Ultimate Spaceships Pack</li><li>Quaternius: Stylized Nature MegaKit (rocks/cliffs)</li><li>ambientCG / Poly Haven: sandstone textures, sunset HDRI</li></ul></div>
+  </div>
+  <div class="meter"><b>Godot:</b> recycled canyon chunks (object pooling), kinematic ship, Area3D rings. <b>Difficulty:</b> ★★☆☆☆</div>
+</div>
+</section>
+
+<!-- 3 RIVER RAFTER -->
+<section class="card">
+<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="540" fill="url(#sky3)"/>
+  <path d="M0 230 L100 170 L210 215 L330 150 L450 205 L580 160 L700 210 L830 165 L960 200 L960 540 L0 540Z" fill="#7aa7c7"/>
+  <path d="M0 255 Q120 215 240 250 T480 245 T720 250 T960 245 L960 540 L0 540Z" fill="#4f8a63"/>
+  <rect y="250" width="960" height="290" fill="#5fb35a"/>
+  <polygon points="561,250 550,308 454,366 321,424 195,482 84,540 784,540 657,482 599,424 600,366 616,308 601,250" fill="#2f8fd8"/>
+  <g fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="3">
+    <path d="M565 280 q10 -4 20 0"/><path d="M510 350 q15 -5 30 0"/><path d="M440 400 q20 -6 40 0"/>
+    <path d="M360 460 q25 -7 50 0"/><path d="M540 470 q25 -7 50 0"/><path d="M260 520 q30 -8 60 0"/><path d="M620 520 q30 -8 60 0"/>
+    <animateTransform attributeName="transform" type="translate" values="0 -6;0 6;0 -6" dur="2s" repeatCount="indefinite"/>
+  </g>
+  <g><ellipse cx="300" cy="483" rx="48" ry="5" fill="#fff" opacity=".7"/><ellipse cx="300" cy="480" rx="40" ry="20" fill="#7d7f86"/></g>
+  <g><ellipse cx="570" cy="402" rx="34" ry="4" fill="#fff" opacity=".7"/><ellipse cx="570" cy="400" rx="28" ry="14" fill="#7d7f86"/></g>
+  <g><ellipse cx="560" cy="332" rx="22" ry="3" fill="#fff" opacity=".7"/><ellipse cx="560" cy="330" rx="18" ry="9" fill="#7d7f86"/></g>
+  <g fill="#2b7a43">
+    <use href="#pine" transform="translate(60 320) scale(.5)"/><use href="#pine" transform="translate(130 300) scale(.45)"/><use href="#pine" transform="translate(200 290) scale(.4)"/>
+    <use href="#pine" transform="translate(20 400) scale(.7)"/><use href="#pine" transform="translate(110 380) scale(.6)"/><use href="#pine" transform="translate(40 510) scale(.9)"/>
+    <use href="#pine" transform="translate(700 300) scale(.45)"/><use href="#pine" transform="translate(780 320) scale(.5)"/><use href="#pine" transform="translate(880 310) scale(.55)"/>
+    <use href="#pine" transform="translate(760 410) scale(.65)"/><use href="#pine" transform="translate(900 430) scale(.75)"/><use href="#pine" transform="translate(920 540) scale(1)"/>
+  </g>
+  <g class="hero" data-x="430" data-y="470" data-rx="170" data-ry="0" data-rot="14" transform="translate(430 470)">
+    <g>
+      <animateTransform class="sway" attributeName="transform" type="translate" values="-90 0;90 0;-90 0" dur="5s" repeatCount="indefinite"/>
+      <animateTransform class="sway" attributeName="transform" type="rotate" values="-8;8;-8" dur="5s" additive="sum" repeatCount="indefinite"/>
+      <ellipse cx="0" cy="26" rx="90" ry="14" fill="#fff" opacity=".6"/>
+      <rect x="-70" y="-20" width="140" height="9" rx="4" fill="#8a5a30"/><rect x="-70" y="-11" width="140" height="9" rx="4" fill="#a06a3a"/>
+      <rect x="-70" y="-2" width="140" height="9" rx="4" fill="#8a5a30"/><rect x="-70" y="7" width="140" height="9" rx="4" fill="#a06a3a"/>
+      <rect x="-70" y="16" width="140" height="9" rx="4" fill="#8a5a30"/>
+      <rect x="-12" y="-46" width="24" height="26" fill="#e34a4a"/><circle cx="0" cy="-56" r="12" fill="#ffcf6e"/>
+      <line x1="-30" y1="-60" x2="40" y2="-5" stroke="#5a3a22" stroke-width="5" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g class="phone" transform="translate(870 480)"><use href="#phone"><animateTransform class="sway" attributeName="transform" type="rotate" values="-20;20;-20" dur="5s" repeatCount="indefinite"/></use></g>
+</svg>
+<div class="body">
+  <div class="tag">Downhill river ride · Relaxed to intense</div>
+  <h2>3. River Rafter</h2>
+  <p>Steer a log raft down a winding forest river. Dodge rocks, ride the rapids, and pick up floating supplies. Calm stretches give way to waterfalls and white water.</p>
+  <div class="grid">
+    <div class="box"><h3>Tilt controls</h3><ul><li>Tilt left/right to steer across the current</li><li>Tilt back to slow down and brace</li><li>The current always pushes you forward</li></ul></div>
+    <div class="box"><h3>Game loop</h3><ul><li>Hand-built river routes</li><li>Supplies upgrade the raft</li><li>Docks act as checkpoints</li></ul></div>
+    <div class="box"><h3>Free asset packs (CC0)</h3><ul><li>Quaternius: Ultimate Nature Pack (pines, rocks, logs)</li><li>KayKit: Forest Nature Pack</li><li>Poly Haven / ambientCG: water normal maps, grass, riverbed</li></ul></div>
+  </div>
+  <div class="meter"><b>Godot:</b> Path3D river with a flow direction, simple water shader, raft that moves relative to the path. <b>Difficulty:</b> ★★★☆☆</div>
+</div>
+</section>
+
+<!-- 4 SHEEPDOG HILLS -->
+<section class="card">
+<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="540" fill="url(#sky4)"/>
+  <circle cx="200" cy="150" r="110" fill="url(#sunGlow)"/><circle cx="200" cy="150" r="36" fill="#fff1c8"/>
+  <path d="M0 280 Q160 220 320 270 T640 260 T960 250 L960 540 L0 540Z" fill="#e6a98a"/>
+  <path d="M0 340 Q200 290 400 330 T800 320 T1200 330 L960 540 L0 540Z" fill="#9fcf6b"/>
+  <path d="M0 410 Q240 370 480 400 T960 395 L960 540 L0 540Z" fill="#7dbb55"/>
+  <rect y="440" width="960" height="100" fill="#6aa848"/>
+  <g stroke="#8a5a30" stroke-width="6" stroke-linecap="round">
+    <line x1="590" y1="380" x2="850" y2="380"/>
+    <line x1="588" y1="360" x2="568" y2="460"/><line x1="610" y1="360" x2="594" y2="460"/><line x1="632" y1="360" x2="619" y2="460"/><line x1="654" y1="360" x2="644" y2="460"/><line x1="676" y1="360" x2="669" y2="460"/>
+    <line x1="764" y1="360" x2="771" y2="460"/><line x1="786" y1="360" x2="796" y2="460"/><line x1="808" y1="360" x2="821" y2="460"/><line x1="830" y1="360" x2="847" y2="460"/><line x1="852" y1="360" x2="872" y2="460"/>
+  </g>
+  <use href="#sheep" transform="translate(720 405) scale(.65)"/>
+  <g stroke="#8a5a30" stroke-width="6" stroke-linecap="round"><line x1="574" y1="430" x2="672" y2="430"/><line x1="768" y1="430" x2="866" y2="430"/></g>
+  <g class="hero" data-x="0" data-y="0" data-rx="30" data-ry="0" data-rot="0">
+    <g>
+      <animateTransform class="sway" attributeName="transform" type="translate" values="-15 0;25 0;-15 0" dur="5s" repeatCount="indefinite"/>
+      <use href="#sheep" transform="translate(380 440) scale(.9)"/>
+      <use href="#sheep" transform="translate(440 470) scale(1.05)"/>
+      <use href="#sheep" transform="translate(330 490) scale(1.1)"/>
+    </g>
+  </g>
+  <g class="hero" data-x="220" data-y="480" data-rx="160" data-ry="30" data-rot="0" transform="translate(220 480)">
+    <g>
+      <animateTransform class="sway" attributeName="transform" type="translate" values="-60 0;110 0;-60 0" dur="5s" repeatCount="indefinite"/>
+      <ellipse cx="0" cy="24" rx="36" ry="8" fill="#000" opacity=".18"/>
+      <rect x="-24" y="0" width="8" height="22" fill="#3a2a20"/><rect x="16" y="0" width="8" height="22" fill="#3a2a20"/>
+      <path d="M-30 -4 L-50 -22 L-30 4Z" fill="#6b4426"><animateTransform attributeName="transform" type="rotate" values="-15 -30 0;15 -30 0;-15 -30 0" dur=".35s" repeatCount="indefinite"/></path>
+      <ellipse cx="0" cy="0" rx="32" ry="15" fill="#6b4426"/>
+      <ellipse cx="10" cy="4" rx="14" ry="9" fill="#fff"/>
+      <circle cx="34" cy="-12" r="14" fill="#6b4426"/>
+      <path d="M26 -24 L30 -38 L38 -24Z" fill="#3a2a20"/>
+      <circle cx="40" cy="-14" r="3" fill="#111"/><circle cx="48" cy="-8" r="3" fill="#111"/>
+    </g>
+  </g>
+  <g class="phone" transform="translate(870 500)"><use href="#phone"><animateTransform class="sway" attributeName="transform" type="rotate" values="-20;20;-20" dur="5s" repeatCount="indefinite"/></use></g>
+</svg>
+<div class="body">
+  <div class="tag">Herding sim · Cozy</div>
+  <h2>4. Sheepdog Hills</h2>
+  <p>You're a sheepdog on rolling green hills. Run close to the sheep to push them, keep the flock together, and guide them into the pen before sunset. Watch out for wolves at dusk.</p>
+  <div class="grid">
+    <div class="box"><h3>Tilt controls</h3><ul><li>Tilt to run in any direction</li><li>The harder you tilt, the faster the dog runs</li><li>Tap to bark, which scatters the sheep or speeds them up</li></ul></div>
+    <div class="box"><h3>Game loop</h3><ul><li>Each level has a flock size and a time limit</li><li>New farms and terrain types</li><li>Stars for speed and for sheep you didn't lose</li></ul></div>
+    <div class="box"><h3>Free asset packs (CC0)</h3><ul><li>Quaternius: Ultimate Animated Animal Pack (check that it has a dog and a sheep)</li><li>Quaternius: Stylized Nature MegaKit</li><li>Poly Haven: meadow HDRI</li></ul></div>
+  </div>
+  <div class="meter"><b>Godot:</b> CharacterBody3D dog, simple flocking AI for the sheep, heightmap terrain. <b>Difficulty:</b> ★★★★☆</div>
+</div>
+</section>
+
+<!-- 5 WISP OF THE WOODS -->
+<section class="card">
+<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="540" fill="url(#sky5)"/>
+  <g fill="#fff" opacity=".7">
+    <rect x="40" y="30" width="2" height="2"/><rect x="120" y="80" width="2" height="2"/><rect x="200" y="20" width="2" height="2"/><rect x="260" y="120" width="2" height="2"/>
+    <rect x="330" y="50" width="2" height="2"/><rect x="410" y="100" width="2" height="2"/><rect x="470" y="30" width="2" height="2"/><rect x="540" y="140" width="2" height="2"/>
+    <rect x="600" y="60" width="2" height="2"/><rect x="660" y="20" width="2" height="2"/><rect x="700" y="150" width="2" height="2"/><rect x="850" y="40" width="2" height="2"/>
+    <rect x="900" y="120" width="2" height="2"/><rect x="930" y="60" width="2" height="2"/><rect x="80" y="170" width="2" height="2"/><rect x="370" y="180" width="2" height="2"/>
+  </g>
+  <circle cx="760" cy="90" r="30" fill="#e8edff"/><circle cx="772" cy="82" r="28" fill="#0c1232"/>
+  <path d="M0 330 L80 280 L170 310 L260 265 L360 300 L470 260 L580 295 L690 255 L800 290 L900 270 L960 285 L960 540 L0 540Z" fill="#15213b"/>
+  <g fill="#0f1a2c" style="--trunk:#0a1220">
+    <use href="#pine" transform="translate(20 400) scale(1.4)"/><use href="#pine" transform="translate(84 410) scale(1.6)"/><use href="#pine" transform="translate(148 420) scale(1.8)"/>
+    <use href="#pine" transform="translate(212 400) scale(2)"/><use href="#pine" transform="translate(276 410) scale(1.4)"/><use href="#pine" transform="translate(340 420) scale(1.6)"/>
+    <use href="#pine" transform="translate(404 400) scale(1.8)"/><use href="#pine" transform="translate(468 410) scale(2)"/><use href="#pine" transform="translate(532 420) scale(1.4)"/>
+    <use href="#pine" transform="translate(596 400) scale(1.6)"/><use href="#pine" transform="translate(660 410) scale(1.8)"/><use href="#pine" transform="translate(724 420) scale(2)"/>
+    <use href="#pine" transform="translate(788 400) scale(1.4)"/><use href="#pine" transform="translate(852 410) scale(1.6)"/><use href="#pine" transform="translate(916 420) scale(1.8)"/>
+  </g>
+  <rect y="400" width="960" height="140" fill="#0b1424"/>
+  <circle cx="180" cy="360" r="95" fill="url(#warmGlow)"><animate attributeName="r" values="85;100;85" dur="2.5s" repeatCount="indefinite"/></circle>
+  <g fill="#2a3044"><rect x="174" y="370" width="12" height="50"/><rect x="474" y="340" width="12" height="70"/><rect x="794" y="380" width="12" height="45"/></g>
+  <rect x="170" y="342" width="20" height="28" rx="3" fill="#ffd27a"/>
+  <rect x="470" y="312" width="20" height="28" rx="3" fill="#3a4258"/>
+  <rect x="790" y="352" width="20" height="28" rx="3" fill="#3a4258"/>
+  <g fill="#060c18" style="--trunk:#050a14">
+    <use href="#pine" transform="translate(-10 560) scale(2.6)"/><use href="#pine" transform="translate(110 560) scale(2.1)"/>
+    <use href="#pine" transform="translate(850 560) scale(2.3)"/><use href="#pine" transform="translate(970 560) scale(2.8)"/>
+  </g>
+  <g fill="#c8ff8c">
+    <circle cx="120" cy="300" r="2.5"><animate attributeName="opacity" values=".2;1;.2" dur="1.7s" repeatCount="indefinite"/></circle>
+    <circle cx="260" cy="230" r="2.5"><animate attributeName="opacity" values="1;.2;1" dur="2.1s" repeatCount="indefinite"/></circle>
+    <circle cx="330" cy="380" r="2.5"><animate attributeName="opacity" values=".2;1;.2" dur="1.4s" repeatCount="indefinite"/></circle>
+    <circle cx="420" cy="200" r="2.5"><animate attributeName="opacity" values="1;.2;1" dur="1.9s" repeatCount="indefinite"/></circle>
+    <circle cx="560" cy="350" r="2.5"><animate attributeName="opacity" values=".2;1;.2" dur="2.3s" repeatCount="indefinite"/></circle>
+    <circle cx="620" cy="240" r="2.5"><animate attributeName="opacity" values="1;.2;1" dur="1.6s" repeatCount="indefinite"/></circle>
+    <circle cx="700" cy="320" r="2.5"><animate attributeName="opacity" values=".2;1;.2" dur="2s" repeatCount="indefinite"/></circle>
+    <circle cx="760" cy="210" r="2.5"><animate attributeName="opacity" values="1;.2;1" dur="1.5s" repeatCount="indefinite"/></circle>
+    <circle cx="880" cy="330" r="2.5"><animate attributeName="opacity" values=".2;1;.2" dur="1.8s" repeatCount="indefinite"/></circle>
+    <circle cx="520" cy="440" r="2.5"><animate attributeName="opacity" values="1;.2;1" dur="2.2s" repeatCount="indefinite"/></circle>
+  </g>
+  <g class="hero" data-x="480" data-y="250" data-rx="260" data-ry="90" data-rot="0" transform="translate(480 250)">
+    <g>
+      <animateTransform class="sway" attributeName="transform" type="translate" values="-220 20;220 -20;-220 20" dur="7s" repeatCount="indefinite"/>
+      <circle cx="-60" cy="10" r="6" fill="#7cf2ff" opacity=".15"/><circle cx="-40" cy="6" r="9" fill="#7cf2ff" opacity=".22"/><circle cx="-20" cy="3" r="12" fill="#7cf2ff" opacity=".3"/>
+      <circle r="70" fill="url(#wispGlow)"/>
+      <circle r="9" fill="#fff"/>
+    </g>
+  </g>
+  <g class="phone" transform="translate(870 480)"><use href="#phone"><animateTransform class="sway" attributeName="transform" type="rotate" values="-20;20;-20" dur="7s" repeatCount="indefinite"/></use></g>
+</svg>
+<div class="body">
+  <div class="tag">Atmospheric explorer · Beautiful</div>
+  <h2>5. Wisp of the Woods</h2>
+  <p>A glowing forest spirit floats through a dark woodland at night. Touch old stone lanterns to relight them and push back the darkness, and follow firefly trails to hidden groves.</p>
+  <div class="grid">
+    <div class="box"><h3>Tilt controls</h3><ul><li>Tilt to float in any direction</li><li>The wisp drifts with momentum, so it feels floaty</li><li>Lit lanterns become checkpoints</li></ul></div>
+    <div class="box"><h3>Game loop</h3><ul><li>Relight every lantern in a region</li><li>The world changes as it gets brighter</li><li>Collectible spirit seeds</li></ul></div>
+    <div class="box"><h3>Free asset packs (CC0)</h3><ul><li>KayKit: Forest Nature Pack</li><li>Quaternius: Ultimate Nature Pack + Fantasy Props MegaKit (lanterns)</li><li>Poly Haven: night HDRI, moss textures</li></ul></div>
+  </div>
+  <div class="meter"><b>Godot:</b> OmniLight3D per lantern, GPUParticles3D fireflies, volumetric fog and glow. <b>Difficulty:</b> ★★★☆☆</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+  <div class="box">
+    <h3>Asset sources (no Kenney)</h3>
+    <ul>
+      <li><a href="https://quaternius.com">quaternius.com</a>: low-poly packs, CC0 (free, including commercial use, no credit needed)</li>
+      <li><a href="https://kaylousberg.itch.io">kaylousberg.itch.io</a> (KayKit): stylized packs, the free editions are CC0</li>
+      <li><a href="https://polyhaven.com">polyhaven.com</a>: HDRI skies, textures, models, CC0</li>
+      <li><a href="https://ambientcg.com">ambientcg.com</a>: PBR textures, CC0</li>
+    </ul>
+    <p class="muted" style="margin:8px 0 0">Confirm the license on each download page. The packs come as glTF/GLB or FBX files, and Godot 4 imports glTF directly.</p>
+  </div>
+  <div class="box" style="margin-top:12px">
+    <h3>How tilt will work in Godot</h3>
+    <ul>
+      <li>Read <code>Input.get_gravity()</code> each physics frame</li>
+      <li>Lock the project to landscape and remap the X and Y axes, because the sensor reports values relative to portrait</li>
+      <li>Calibrate at start, so the player can hold the phone at a comfortable angle</li>
+      <li>Add a dead zone and smoothing, plus a keyboard fallback for testing in the editor</li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var tx = 0, ty = 0, x = 0, y = 0, live = false;
+  var heroes = document.querySelectorAll(".hero");
+  var phones = document.querySelectorAll(".phone");
+  var status = document.getElementById("tiltStatus");
+
+  function goLive() {
+    if (live) return;
+    live = true;
+    var sways = document.querySelectorAll(".sway");
+    for (var i = 0; i < sways.length; i++) sways[i].parentNode.removeChild(sways[i]);
+    requestAnimationFrame(frame);
+  }
+  function clamp(v) { return Math.max(-1, Math.min(1, v)); }
+  function onOrient(e) {
+    var angle = (screen.orientation && screen.orientation.angle) || window.orientation || 0;
+    var gx = e.gamma || 0, gy = e.beta || 0;
+    if (angle === 90) { gx = e.beta; gy = -e.gamma; }
+    else if (angle === -90 || angle === 270) { gx = -e.beta; gy = e.gamma; }
+    tx = clamp(gx / 30); ty = clamp(gy / 30);
+    goLive();
+  }
+  function frame() {
+    x += (tx - x) * 0.12; y += (ty - y) * 0.12;
+    for (var i = 0; i < heroes.length; i++) {
+      var h = heroes[i], d = h.dataset;
+      var px = +d.x + x * +d.rx, py = +d.y + y * +d.ry;
+      h.setAttribute("transform", "translate(" + px + " " + py + ") rotate(" + (x * +d.rot) + ")");
+    }
+    for (var j = 0; j < phones.length; j++) {
+      var p = phones[j];
+      var base = p.getAttribute("data-base") || p.getAttribute("transform");
+      p.setAttribute("data-base", base);
+      p.setAttribute("transform", base + " rotate(" + (x * 25) + ")");
+    }
+    requestAnimationFrame(frame);
+  }
+  document.getElementById("tiltBtn").addEventListener("click", function () {
+    function start() { window.addEventListener("deviceorientation", onOrient); status.textContent = "tilt active: tilt your phone"; }
+    if (window.DeviceOrientationEvent && typeof DeviceOrientationEvent.requestPermission === "function") {
+      DeviceOrientationEvent.requestPermission().then(function (r) {
+        if (r === "granted") start(); else status.textContent = "permission denied";
+      }).catch(function () { status.textContent = "tilt unavailable here (open in Safari)"; });
+    } else { start(); }
+  });
+  window.addEventListener("mousemove", function (e) {
+    tx = (e.clientX / innerWidth) * 2 - 1; ty = (e.clientY / innerHeight) * 2 - 1;
+    status.textContent = "mouse preview"; goLive();
+  });
+})();
+</script>
+</body>
+</html>

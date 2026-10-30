@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelLook" format=3 uid="uid://dm0qvrjw3voks"]
+
+[ext_resource type="Script" uid="uid://bak31kucioirw" path="res://scripts/core/level_look.gd" id="1_0nffm"]
+
+[resource]
+script = ExtResource("1_0nffm")
+sun_color = Color(1, 0.8, 0.58, 1)
+sun_elevation = 22.0
+sun_azimuth = -62.0

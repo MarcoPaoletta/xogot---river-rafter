@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://nxh224hywvjm"]
+
+[ext_resource type="PackedScene" uid="uid://qntoetcm7edv" path="res://assets/models/nature/tree_stump_moss/tree_stump_moss.glb" id="1_32vtq"]
+
+[node name="TreeStumpMoss" type="Node3D" unique_id=1829689848]
+
+[node name="Model" parent="." unique_id=1039307556 instance=ExtResource("1_32vtq")]

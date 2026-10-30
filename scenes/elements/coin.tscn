@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://gb8lnicapsqr"]
+
+[ext_resource type="Script" uid="uid://go07pmd2mr1g" path="res://scripts/elements/coin.gd" id="1_3tij2"]
+[ext_resource type="PackedScene" uid="uid://b1cm3yb6vn7ce" path="res://scenes/fx/coin_burst.tscn" id="2_2dhgq"]
+[ext_resource type="Material" uid="uid://cl1xncadnjthn" path="res://assets/materials/coin_gold.tres" id="3_2dhgq"]
+[ext_resource type="ArrayMesh" uid="uid://dreiuo72stbdh" path="res://assets/models/props/star_coin/star_coin_mesh.res" id="4_prbbh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_70nh8"]
+radius = 1.0
+
+[node name="Coin" type="Node3D" unique_id=154550835]
+script = ExtResource("1_3tij2")
+burst_scene = ExtResource("2_2dhgq")
+
+[node name="Model" type="Node3D" parent="." unique_id=772250004]
+
+[node name="StarCoin" type="MeshInstance3D" parent="Model" unique_id=1080860302]
+transform = Transform3D(150, 0, 0, 0, -6.5567083e-06, 150, 0, -150, -6.5567083e-06, 0, 1.3, 0)
+material_override = ExtResource("3_2dhgq")
+mesh = ExtResource("4_prbbh")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=392204438]
+collision_mask = 0
+monitoring = false
+
+[node name="Shape" type="CollisionShape3D" parent="Area3D" unique_id=2089521217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+shape = SubResource("SphereShape3D_70nh8")

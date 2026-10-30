@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://b7rfmckugnw5b"]
+
+[ext_resource type="Script" uid="uid://dxuufg8i1wbus" path="res://scripts/elements/raft.gd" id="1_xm1os"]
+[ext_resource type="PackedScene" uid="uid://d0ckrc061y47y" path="res://scenes/fx/splash_burst.tscn" id="2_jd8pi"]
+[ext_resource type="PackedScene" uid="uid://b1bviasp4fn41" path="res://scenes/fx/pop_label.tscn" id="3_36fbm"]
+[ext_resource type="Resource" uid="uid://bqqhd4famn3ws" path="res://assets/materials/raft_fx.tres" id="4_7b6un"]
+[ext_resource type="PackedScene" uid="uid://c2hxf6edcxshp" path="res://assets/models/raft/raft/raft.glb" id="4_n8pbe"]
+[ext_resource type="PackedScene" uid="uid://d3ry5m6jsqy51" path="res://assets/models/raft/raft_paddle/raft_paddle.glb" id="6_6ibc8"]
+[ext_resource type="Material" uid="uid://85tws12ijip7" path="res://assets/materials/pm_foam_trail.tres" id="6_jd8pi"]
+[ext_resource type="QuadMesh" uid="uid://cm36loyrqsjqt" path="res://assets/materials/mesh_foam_patch.tres" id="7_36fbm"]
+[ext_resource type="QuadMesh" uid="uid://bbmp3rvpmft1v" path="res://assets/materials/mesh_puff.tres" id="8_8cnsg"]
+[ext_resource type="Material" uid="uid://djlqld8rpv2ug" path="res://assets/materials/pm_spray.tres" id="9_abub4"]
+[ext_resource type="Material" uid="uid://clovxsgi2cn3a" path="res://assets/materials/pm_turbo_trail.tres" id="10_7b6un"]
+[ext_resource type="QuadMesh" uid="uid://dshgip7bl5x2v" path="res://assets/materials/mesh_foam_hull.tres" id="10_n8pbe"]
+[ext_resource type="QuadMesh" uid="uid://c6tekvi0h2o5j" path="res://assets/materials/mesh_sparkle.tres" id="11_6ibc8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d4a5l"]
+size = Vector3(1.7, 1.4, 3.3)
+
+[node name="Raft" type="Node3D" unique_id=1257346422]
+script = ExtResource("1_xm1os")
+splash_scene = ExtResource("2_jd8pi")
+pop_scene = ExtResource("3_36fbm")
+fx = ExtResource("4_7b6un")
+
+[node name="Visual" type="Node3D" parent="." unique_id=637839643]
+
+[node name="Hull" parent="Visual" unique_id=2134445642 instance=ExtResource("4_n8pbe")]
+transform = Transform3D(0.155, 0, 0, 0, 0.155, 0, 0, 0, 0.155, 0, 0.08, 0)
+
+[node name="Paddle" parent="Visual" unique_id=806918578 instance=ExtResource("6_6ibc8")]
+transform = Transform3D(0.09608529, -0.013503908, 0.02419219, 0.013917311, 0.09902681, 0, -0.023956753, 0.0033669022, 0.097029574, 0.32, 0.42, 0.25)
+
+[node name="Wake" type="GPUParticles3D" parent="Visual" unique_id=1912013933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 1.6)
+emitting = false
+amount = 70
+lifetime = 1.8
+process_material = ExtResource("6_jd8pi")
+draw_pass_1 = ExtResource("7_36fbm")
+
+[node name="SprayLeft" type="GPUParticles3D" parent="Visual" unique_id=1453295893]
+transform = Transform3D(0.76604444, -0.6427876, 0, 0.6427876, 0.76604444, 0, 0, 0, 1, -1, 0.1, -0.4)
+emitting = false
+amount = 24
+lifetime = 0.6
+process_material = ExtResource("9_abub4")
+draw_pass_1 = ExtResource("8_8cnsg")
+
+[node name="SprayRight" type="GPUParticles3D" parent="Visual" unique_id=484711597]
+transform = Transform3D(0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, 0, 0, 0, 1, 1, 0.1, -0.4)
+emitting = false
+amount = 24
+lifetime = 0.6
+process_material = ExtResource("9_abub4")
+draw_pass_1 = ExtResource("8_8cnsg")
+
+[node name="Seats" type="Node3D" parent="Visual" unique_id=1593533023]
+
+[node name="Seat1" type="Marker3D" parent="Visual/Seats" unique_id=628398135]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.42, 0.28, -0.95)
+
+[node name="Seat2" type="Marker3D" parent="Visual/Seats" unique_id=1761701596]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.42, 0.28, -0.95)
+
+[node name="Seat3" type="Marker3D" parent="Visual/Seats" unique_id=193089863]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.42, 0.28, 0.55)
+
+[node name="Seat4" type="Marker3D" parent="Visual/Seats" unique_id=2009700983]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.42, 0.28, 0.55)
+
+[node name="TurboTrail" type="GPUParticles3D" parent="Visual" unique_id=526073802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1.6)
+emitting = false
+amount = 40
+lifetime = 0.9
+process_material = ExtResource("10_7b6un")
+draw_pass_1 = ExtResource("11_6ibc8")
+
+[node name="HitArea" type="Area3D" parent="." unique_id=1361214153]
+collision_layer = 2
+monitorable = false
+
+[node name="Shape" type="CollisionShape3D" parent="HitArea" unique_id=1862837194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_d4a5l")
+
+[node name="HullFoam" type="MeshInstance3D" parent="." unique_id=1430500639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0.1)
+cast_shadow = 0
+mesh = ExtResource("10_n8pbe")

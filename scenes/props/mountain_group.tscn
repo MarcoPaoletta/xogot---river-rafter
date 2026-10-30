@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d4a2hxn8o0ubo"]
+
+[ext_resource type="PackedScene" uid="uid://d3j6ud2bxpv53" path="res://assets/models/nature/mountain_group/mountain_group.glb" id="1_ae4ct"]
+
+[node name="MountainGroup" type="Node3D" unique_id=1281334638]
+
+[node name="Model" parent="." unique_id=1644379092 instance=ExtResource("1_ae4ct")]

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cfgfombgsq5q7"]
+
+[ext_resource type="PackedScene" uid="uid://dffrbwtrxwcp1" path="res://assets/models/nature/bush_snow/bush_snow.glb" id="1_60cdf"]
+
+[node name="BushSnow" type="Node3D" unique_id=776248410]
+
+[node name="Model" parent="." unique_id=19345620 instance=ExtResource("1_60cdf")]

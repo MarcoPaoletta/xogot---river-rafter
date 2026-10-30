@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cy4notsvk4d3g"]
+
+[ext_resource type="PackedScene" uid="uid://ceowu48f8y1fa" path="res://assets/models/nature/rock_snow/rock_snow.glb" id="1_xlxjy"]
+
+[node name="RockSnow" type="Node3D" unique_id=963374447]
+
+[node name="Model" parent="." unique_id=991220220 instance=ExtResource("1_xlxjy")]

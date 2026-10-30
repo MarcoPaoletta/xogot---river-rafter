@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ct1xt211mtmf"]
+
+[ext_resource type="PackedScene" uid="uid://cqwhatgkq55ug" path="res://assets/models/nature/pine_tree_snow/pine_tree_snow.glb" id="1_342hr"]
+
+[node name="PineTreeSnow" type="Node3D" unique_id=1407886114]
+
+[node name="Model" parent="." unique_id=644286152 instance=ExtResource("1_342hr")]

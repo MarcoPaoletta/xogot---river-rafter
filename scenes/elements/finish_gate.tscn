@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://bh14merl5dv5q"]
+
+[ext_resource type="Script" uid="uid://dagq5crcm6eui" path="res://scripts/elements/finish_gate.gd" id="1_h3k8c"]
+[ext_resource type="Material" uid="uid://c3twgv1fvsdd5" path="res://assets/materials/wood_pole.tres" id="2_01hyn"]
+[ext_resource type="Material" uid="uid://cgypcpfsiqhf8" path="res://assets/materials/banner_red.tres" id="3_2nfyj"]
+[ext_resource type="Material" uid="uid://cn8l5slccw8uh" path="res://assets/materials/banner_white.tres" id="4_a5akn"]
+[ext_resource type="PackedScene" uid="uid://k0ug7nerqfxo" path="res://assets/models/props/flag/flag.glb" id="5_ermpp"]
+[ext_resource type="PackedScene" uid="uid://c5hx0ms1vh05r" path="res://assets/models/props/dock_long/dock_long.glb" id="6_g2p58"]
+[ext_resource type="Material" uid="uid://desx1o6qgpw1o" path="res://assets/materials/pm_confetti.tres" id="7_lu26l"]
+[ext_resource type="QuadMesh" uid="uid://cj1ma4nfi5l0o" path="res://assets/materials/mesh_confetti.tres" id="8_0xiw8"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_r5scy"]
+top_radius = 0.18
+bottom_radius = 0.26
+height = 8.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bcy5k"]
+top_radius = 0.18
+bottom_radius = 0.26
+height = 8.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ka452"]
+size = Vector3(21.6, 1.6, 0.18)
+
+[sub_resource type="BoxMesh" id="BoxMesh_718wl"]
+size = Vector3(21.8, 0.22, 0.22)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h0x5t"]
+size = Vector3(24, 5, 2.5)
+
+[node name="FinishGate" type="Node3D" unique_id=1502546936]
+script = ExtResource("1_h3k8c")
+
+[node name="PoleLeft" type="MeshInstance3D" parent="." unique_id=947148700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8, 3.2, 0)
+material_override = ExtResource("2_01hyn")
+mesh = SubResource("CylinderMesh_r5scy")
+
+[node name="PoleRight" type="MeshInstance3D" parent="." unique_id=1201424342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8, 3.2, 0)
+material_override = ExtResource("2_01hyn")
+mesh = SubResource("CylinderMesh_bcy5k")
+
+[node name="Banner" type="Node3D" parent="." unique_id=233340126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.4, 0)
+
+[node name="Cloth" type="MeshInstance3D" parent="Banner" unique_id=653503318]
+material_override = ExtResource("3_2nfyj")
+mesh = SubResource("BoxMesh_ka452")
+
+[node name="Trim" type="MeshInstance3D" parent="Banner" unique_id=1677568338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
+material_override = ExtResource("4_a5akn")
+mesh = SubResource("BoxMesh_718wl")
+
+[node name="Label" type="Label3D" parent="Banner" unique_id=1592636]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0.12)
+pixel_size = 0.006
+double_sided = false
+modulate = Color(1, 0.97, 0.9, 1)
+outline_modulate = Color(0.45, 0.08, 0.06, 1)
+text = "FINISH"
+font_size = 220
+outline_size = 36
+
+[node name="FlagLeft" parent="." unique_id=1952030244 instance=ExtResource("5_ermpp")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -10.8, 7.2, 0)
+
+[node name="FlagRight" parent="." unique_id=1909126163 instance=ExtResource("5_ermpp")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 10.8, 7.2, 0)
+
+[node name="Dock" parent="." unique_id=1170376368 instance=ExtResource("6_g2p58")]
+transform = Transform3D(-1.57361e-08, 0, 0.36, 0, 0.36, 0, -0.36, 0, -1.57361e-08, 13.5, -0.4, -6)
+
+[node name="ConfettiLeft" type="GPUParticles3D" parent="." unique_id=1594579683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8, 7.5, 0)
+emitting = false
+amount = 90
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.85
+process_material = ExtResource("7_lu26l")
+draw_pass_1 = ExtResource("8_0xiw8")
+
+[node name="ConfettiRight" type="GPUParticles3D" parent="." unique_id=386915089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8, 7.5, 0)
+emitting = false
+amount = 90
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.85
+process_material = ExtResource("7_lu26l")
+draw_pass_1 = ExtResource("8_0xiw8")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1335995964]
+collision_mask = 0
+monitoring = false
+
+[node name="Shape" type="CollisionShape3D" parent="Area3D" unique_id=1023691487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_h0x5t")

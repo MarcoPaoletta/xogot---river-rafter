@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://de3waw5lok18l"]
+
+[ext_resource type="PackedScene" uid="uid://duysa6lfc5sob" path="res://assets/models/nature/rock_large_a/rock_large_a.glb" id="1_qikgc"]
+
+[node name="RockLargeA" type="Node3D" unique_id=597712589]
+
+[node name="Model" parent="." unique_id=1052503697 instance=ExtResource("1_qikgc")]

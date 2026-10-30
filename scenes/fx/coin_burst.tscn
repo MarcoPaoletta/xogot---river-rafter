@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b1cm3yb6vn7ce"]
+
+[ext_resource type="Script" uid="uid://5gturl21v6sn" path="res://scripts/elements/one_shot_fx.gd" id="1_y37au"]
+[ext_resource type="Material" uid="uid://heli23qr0oxv" path="res://assets/materials/pm_coin_sparkle.tres" id="2_dudl8"]
+[ext_resource type="QuadMesh" uid="uid://c6tekvi0h2o5j" path="res://assets/materials/mesh_sparkle.tres" id="3_msdqq"]
+[ext_resource type="Material" uid="uid://baaix5wlep2ca" path="res://assets/materials/pm_coin_ring.tres" id="4_lut02"]
+[ext_resource type="QuadMesh" uid="uid://dn4qdm4yw0scw" path="res://assets/materials/mesh_pickup_ring.tres" id="5_e4yk7"]
+
+[node name="CoinBurst" type="Node3D" unique_id=482314274]
+script = ExtResource("1_y37au")
+
+[node name="Sparks" type="GPUParticles3D" parent="." unique_id=982310723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+emitting = false
+amount = 20
+lifetime = 0.55
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource("2_dudl8")
+draw_pass_1 = ExtResource("3_msdqq")
+
+[node name="Ring" type="GPUParticles3D" parent="." unique_id=2071916850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+emitting = false
+amount = 1
+lifetime = 0.35
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource("4_lut02")
+draw_pass_1 = ExtResource("5_e4yk7")

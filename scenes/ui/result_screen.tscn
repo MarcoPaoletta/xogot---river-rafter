@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bjvtqejfioh4k"]
+
+[ext_resource type="Script" uid="uid://duxwrudfihpu4" path="res://scripts/ui/result_screen.gd" id="1_gm1r0"]
+[ext_resource type="Theme" uid="uid://780yw8mlatmt" path="res://assets/ui/theme.tres" id="2_8j0an"]
+[ext_resource type="Script" uid="uid://cuf4sm2fycyul" path="res://scripts/ui/star_row.gd" id="3_k5y8v"]
+
+[node name="ResultScreen" type="CanvasLayer" unique_id=1408579046]
+layer = 30
+script = ExtResource("1_gm1r0")
+
+[node name="Root" type="Control" parent="." unique_id=1948371139]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_8j0an")
+
+[node name="Dim" type="ColorRect" parent="Root" unique_id=318603589]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.01, 0.04, 0.06, 0.45)
+
+[node name="Panel" type="PanelContainer" parent="Root" unique_id=1205570736]
+custom_minimum_size = Vector2(980, 0)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -474.0
+offset_top = -278.5
+offset_right = 474.0
+offset_bottom = 278.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/Panel" unique_id=764468592]
+layout_mode = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="Title" type="Label" parent="Root/Panel/VBox" unique_id=767421718]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.86, 0.3, 1)
+theme_override_font_sizes/font_size = 96
+text = "RIVER CONQUERED!"
+horizontal_alignment = 1
+
+[node name="Stars" type="Control" parent="Root/Panel/VBox" unique_id=884783621]
+custom_minimum_size = Vector2(460, 130)
+layout_mode = 2
+size_flags_horizontal = 4
+script = ExtResource("3_k5y8v")
+
+[node name="Stats" type="Label" parent="Root/Panel/VBox" unique_id=1852347819]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Coins 0 / 40"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Root/Panel/VBox" unique_id=737587691]
+layout_mode = 2
+theme_override_constants/separation = 28
+alignment = 1
+
+[node name="Next" type="Button" parent="Root/Panel/VBox/Buttons" unique_id=679891199]
+custom_minimum_size = Vector2(300, 110)
+layout_mode = 2
+text = "Next river"
+
+[node name="Retry" type="Button" parent="Root/Panel/VBox/Buttons" unique_id=697450625]
+custom_minimum_size = Vector2(240, 110)
+layout_mode = 2
+text = "Retry"
+
+[node name="Menu" type="Button" parent="Root/Panel/VBox/Buttons" unique_id=865654988]
+custom_minimum_size = Vector2(240, 110)
+layout_mode = 2
+text = "Menu"

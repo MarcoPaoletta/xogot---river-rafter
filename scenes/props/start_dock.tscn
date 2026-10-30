@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://beg2a4llwh7w0"]
+
+[ext_resource type="PackedScene" uid="uid://c5hx0ms1vh05r" path="res://assets/models/props/dock_long/dock_long.glb" id="1_cyug3"]
+[ext_resource type="PackedScene" uid="uid://mrxgl6t73q8v" path="res://assets/models/props/crate/crate.glb" id="2_wl55u"]
+[ext_resource type="PackedScene" uid="uid://box0bnc6tc54g" path="res://assets/models/props/barrel/barrel.glb" id="3_ix617"]
+[ext_resource type="PackedScene" uid="uid://k0ug7nerqfxo" path="res://assets/models/props/flag/flag.glb" id="4_d3fqs"]
+
+[node name="StartDock" type="Node3D" unique_id=1317226468]
+
+[node name="Dock" parent="." unique_id=1170376368 instance=ExtResource("1_cyug3")]
+transform = Transform3D(-1.57361e-08, 0, 0.36, 0, 0.36, 0, -0.36, 0, -1.57361e-08, 0, -0.4, 0)
+
+[node name="Crate1" parent="." unique_id=405481269 instance=ExtResource("2_wl55u")]
+transform = Transform3D(0.7825181, 0, 0.16632937, 0, 0.8, 0, -0.16632937, 0, 0.7825181, 0.4, 1.55, -1.2)
+
+[node name="Crate2" parent="." unique_id=445481033 instance=ExtResource("2_wl55u")]
+transform = Transform3D(0.5638156, 0, -0.20521209, 0, 0.6, 0, 0.20521209, 0, 0.5638156, 0.5, 2.3, -1.1)
+
+[node name="Barrel" parent="." unique_id=1708478549 instance=ExtResource("3_ix617")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0.6, 1.2, 1.4)
+
+[node name="Flag" parent="." unique_id=1952030244 instance=ExtResource("4_d3fqs")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.2, 1.2, -3)

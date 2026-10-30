@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ca7281pmeqxdu"]
+
+[ext_resource type="Script" uid="uid://b7knes2iacu4n" path="res://scripts/elements/camera_rig.gd" id="1_db2x7"]
+
+[node name="CameraRig" type="Node3D" unique_id=1448084180]
+physics_interpolation_mode = 2
+script = ExtResource("1_db2x7")
+tuner_distance = 7
+tuner_height = 3.3
+tuner_fov = 48
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=699677437]
+current = true
+fov = 62.0
+far = 300.0

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="LevelLook" format=3 uid="uid://c4tkdv88pdd4v"]
+
+[ext_resource type="Script" uid="uid://bak31kucioirw" path="res://scripts/core/level_look.gd" id="1_xkkgw"]
+
+[resource]
+script = ExtResource("1_xkkgw")
+sun_energy = 1.35

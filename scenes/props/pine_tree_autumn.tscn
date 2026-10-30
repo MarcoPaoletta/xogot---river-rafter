@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bucqxxiaqgwtg"]
+
+[ext_resource type="PackedScene" uid="uid://bl6eunc1767pa" path="res://assets/models/nature/pine_tree_autumn/pine_tree_autumn.glb" id="1_2jpmh"]
+
+[node name="PineTreeAutumn" type="Node3D" unique_id=1664613781]
+
+[node name="Model" parent="." unique_id=1881851834 instance=ExtResource("1_2jpmh")]

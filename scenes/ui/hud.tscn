@@ -1,0 +1,323 @@
+[gd_scene format=3 uid="uid://b8aqprula8ydk"]
+
+[ext_resource type="Script" uid="uid://c8rknuo5ke441" path="res://scripts/ui/hud.gd" id="1_oj5la"]
+[ext_resource type="Material" uid="uid://b046aibu2fpny" path="res://assets/materials/screen_mood.tres" id="2_gss2c"]
+[ext_resource type="Theme" uid="uid://780yw8mlatmt" path="res://assets/ui/theme.tres" id="2_h022r"]
+[ext_resource type="Script" uid="uid://0lxjdvcnc6n2" path="res://scripts/ui/heart_icon.gd" id="3_h022r"]
+[ext_resource type="Script" uid="uid://c6qfqid2j0toj" path="res://scripts/ui/river_progress.gd" id="4_4jqwt"]
+[ext_resource type="Script" uid="uid://ds5pev0awcun2" path="res://scripts/ui/coin_icon.gd" id="5_kicr4"]
+[ext_resource type="Script" uid="uid://cv2yofgyesrqy" path="res://scripts/ui/speaker_icon.gd" id="6_mj13f"]
+[ext_resource type="Script" uid="uid://bx186vjosqc7w" path="res://scripts/ui/flow_bar.gd" id="8_4jqwt"]
+[ext_resource type="Script" uid="uid://cp5h4226gasr8" path="res://scripts/ui/stamina_ring.gd" id="9_kicr4"]
+[ext_resource type="PackedScene" uid="uid://d3ry5m6jsqy51" path="res://assets/models/raft/raft_paddle/raft_paddle.glb" id="10_kicr4"]
+
+[sub_resource type="Environment" id="Environment_mj13f"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 0.95, 0.85, 1)
+ambient_light_energy = 0.8
+
+[node name="HUD" type="CanvasLayer" unique_id=1052019731]
+layer = 10
+script = ExtResource("1_oj5la")
+
+[node name="Root" type="Control" parent="." unique_id=415979136]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_h022r")
+
+[node name="Vignette" type="ColorRect" parent="Root" unique_id=1478197746]
+material = ExtResource("2_gss2c")
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="TopBar" type="MarginContainer" parent="Root" unique_id=256967780]
+layout_mode = 0
+anchor_right = 1.0
+offset_bottom = 32.0
+mouse_filter = 2
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 44
+
+[node name="Row" type="HBoxContainer" parent="Root/TopBar" unique_id=1172306482]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 22
+
+[node name="Hearts" type="HBoxContainer" parent="Root/TopBar/Row" unique_id=302218075]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Heart1" type="Control" parent="Root/TopBar/Row/Hearts" unique_id=877676098]
+custom_minimum_size = Vector2(84, 78)
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("3_h022r")
+
+[node name="Heart2" type="Control" parent="Root/TopBar/Row/Hearts" unique_id=2007744728]
+custom_minimum_size = Vector2(84, 78)
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("3_h022r")
+
+[node name="Heart3" type="Control" parent="Root/TopBar/Row/Hearts" unique_id=415233065]
+custom_minimum_size = Vector2(84, 78)
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("3_h022r")
+
+[node name="SpacerL" type="Control" parent="Root/TopBar/Row" unique_id=1419350533]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Middle" type="VBoxContainer" parent="Root/TopBar/Row" unique_id=1874209048]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="LevelName" type="Label" parent="Root/TopBar/Row/Middle" unique_id=1753014875]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Pine Gorge"
+horizontal_alignment = 1
+
+[node name="Progress" type="Control" parent="Root/TopBar/Row/Middle" unique_id=1948735582]
+custom_minimum_size = Vector2(620, 54)
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("4_4jqwt")
+
+[node name="SpacerR" type="Control" parent="Root/TopBar/Row" unique_id=1270338090]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="CoinPanel" type="PanelContainer" parent="Root/TopBar/Row" unique_id=149785565]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_type_variation = &"HudPanel"
+
+[node name="CoinRow" type="HBoxContainer" parent="Root/TopBar/Row/CoinPanel" unique_id=424510795]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="CoinIcon" type="Control" parent="Root/TopBar/Row/CoinPanel/CoinRow" unique_id=1876569230]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("5_kicr4")
+
+[node name="CoinLabel" type="Label" parent="Root/TopBar/Row/CoinPanel/CoinRow" unique_id=966732692]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "0 / 40"
+
+[node name="Multiplier" type="Label" parent="Root/TopBar/Row/CoinPanel/CoinRow" unique_id=659396982]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 40
+text = "x2"
+
+[node name="MuteButton" type="Button" parent="Root/TopBar/Row" unique_id=423148693]
+custom_minimum_size = Vector2(108, 108)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+
+[node name="Speaker" type="Control" parent="Root/TopBar/Row/MuteButton" unique_id=2119374059]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = -18.0
+offset_bottom = -18.0
+mouse_filter = 2
+script = ExtResource("6_mj13f")
+
+[node name="Key" type="Label" parent="Root/TopBar/Row/MuteButton" unique_id=517396096]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -36.0
+theme_override_font_sizes/font_size = 26
+text = "M"
+
+[node name="PauseButton" type="Button" parent="Root/TopBar/Row" unique_id=1792819912]
+custom_minimum_size = Vector2(108, 108)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 56
+text = "II"
+
+[node name="Countdown" type="Label" parent="Root" unique_id=1372514492]
+custom_minimum_size = Vector2(700, 300)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -132.0
+offset_right = 60.5
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 34
+theme_override_font_sizes/font_size = 230
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hint" type="Label" parent="Root" unique_id=1591493211]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = -127.0
+offset_right = -60.0
+offset_bottom = -60.0
+theme_override_font_sizes/font_size = 48
+text = "Tilt to steer"
+horizontal_alignment = 1
+
+[node name="FlowBox" type="VBoxContainer" parent="Root" unique_id=1265995404]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = 48.0
+offset_top = 122.0
+offset_right = 348.0
+offset_bottom = 196.0
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="FlowLabel" type="Label" parent="Root/FlowBox" unique_id=332765038]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.97, 1, 1)
+theme_override_font_sizes/font_size = 34
+text = "FLOW"
+
+[node name="FlowBar" type="Control" parent="Root/FlowBox" unique_id=318923510]
+custom_minimum_size = Vector2(300, 34)
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("8_4jqwt")
+
+[node name="PaddleButton" type="Button" parent="Root" unique_id=2107789019]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -306.0
+offset_top = -306.0
+offset_right = -56.0
+offset_bottom = -56.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+flat = true
+
+[node name="Ring" type="Control" parent="Root/PaddleButton" unique_id=1698608641]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("9_kicr4")
+
+[node name="Icon3D" type="SubViewportContainer" parent="Root/PaddleButton" unique_id=383087557]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 38.0
+offset_right = -38.0
+offset_bottom = -38.0
+mouse_filter = 2
+stretch = true
+
+[node name="Viewport" type="SubViewport" parent="Root/PaddleButton/Icon3D" unique_id=684681149]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+msaa_3d = 2
+size = Vector2i(174, 174)
+render_target_update_mode = 4
+
+[node name="Pivot" type="Node3D" parent="Root/PaddleButton/Icon3D/Viewport" unique_id=1403906409]
+transform = Transform3D(0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Paddle" parent="Root/PaddleButton/Icon3D/Viewport/Pivot" unique_id=806918578 instance=ExtResource("10_kicr4")]
+transform = Transform3D(0.32, 0, 0, 0, -1.3987644e-08, -0.12, 0, 0.32, -5.2453664e-09, 0, 0.1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Root/PaddleButton/Icon3D/Viewport" unique_id=1979896703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
+fov = 40.0
+
+[node name="Light" type="DirectionalLight3D" parent="Root/PaddleButton/Icon3D/Viewport" unique_id=331248476]
+transform = Transform3D(0.8660254, -0.28678823, 0.40957603, 0, 0.81915206, 0.57357645, -0.5, -0.49673176, 0.7094065, 0, 0, 0)
+light_energy = 1.4
+
+[node name="Env" type="WorldEnvironment" parent="Root/PaddleButton/Icon3D/Viewport" unique_id=1696608034]
+environment = SubResource("Environment_mj13f")
+
+[node name="Label" type="Label" parent="Root/PaddleButton" unique_id=138500638]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -24.0
+offset_right = 125.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 34
+text = "PADDLE"
+horizontal_alignment = 1
+
+[node name="Shake" type="Label" parent="Root/PaddleButton" unique_id=737223430]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = -30.0
+offset_right = 125.0
+offset_bottom = 4.0
+theme_override_font_sizes/font_size = 26
+text = "or shake!"
+horizontal_alignment = 1
+
+[node name="Callout" type="Label" parent="Root" unique_id=102529429]
+custom_minimum_size = Vector2(1000, 160)
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.5
+offset_top = 200.0
+offset_right = 170.5
+offset_bottom = 338.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 120
+text = "FLOW!"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://bv4pw2381v2xp"]
+
+[ext_resource type="Script" uid="uid://i7xsj4bqutfs" path="res://scripts/ui/title_screen.gd" id="1_a4ium"]
+[ext_resource type="Theme" uid="uid://780yw8mlatmt" path="res://assets/ui/theme.tres" id="2_r23qo"]
+[ext_resource type="Script" uid="uid://cuf4sm2fycyul" path="res://scripts/ui/star_row.gd" id="3_cfe2f"]
+[ext_resource type="Script" uid="uid://cv2yofgyesrqy" path="res://scripts/ui/speaker_icon.gd" id="4_6ik4u"]
+
+[node name="TitleScreen" type="CanvasLayer" unique_id=1990750282]
+layer = 20
+script = ExtResource("1_a4ium")
+
+[node name="Root" type="Control" parent="." unique_id=150592420]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("2_r23qo")
+
+[node name="Shade" type="ColorRect" parent="Root" unique_id=112026725]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.02, 0.07, 0.09, 0.28)
+
+[node name="Center" type="VBoxContainer" parent="Root" unique_id=1258103892]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 26
+alignment = 1
+
+[node name="Title" type="Label" parent="Root/Center" unique_id=117865580]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.86, 0.3, 1)
+theme_override_colors/font_outline_color = Color(0.16, 0.09, 0.03, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 176
+text = "RIVER RAFTER"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Root/Center" unique_id=440173800]
+layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "Tilt your phone to steer down the rapids"
+horizontal_alignment = 1
+
+[node name="Gap" type="Control" parent="Root/Center" unique_id=1749973308]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="Levels" type="HBoxContainer" parent="Root/Center" unique_id=1263196555]
+layout_mode = 2
+theme_override_constants/separation = 44
+alignment = 1
+
+[node name="Level1" type="Button" parent="Root/Center/Levels" unique_id=335449073]
+custom_minimum_size = Vector2(430, 250)
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="Root/Center/Levels/Level1" unique_id=1448454560]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Number" type="Label" parent="Root/Center/Levels/Level1/Content" unique_id=1395488232]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23, 0.13, 0.06, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 30
+text = "RIVER 1"
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="Root/Center/Levels/Level1/Content" unique_id=1980005652]
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+text = "Pine Gorge"
+horizontal_alignment = 1
+
+[node name="Stars" type="Control" parent="Root/Center/Levels/Level1/Content" unique_id=64273958]
+custom_minimum_size = Vector2(240, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+script = ExtResource("3_cfe2f")
+
+[node name="Status" type="Label" parent="Root/Center/Levels/Level1/Content" unique_id=1615472501]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23, 0.13, 0.06, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 28
+text = "New river"
+horizontal_alignment = 1
+
+[node name="Level2" type="Button" parent="Root/Center/Levels" unique_id=623911622]
+custom_minimum_size = Vector2(430, 250)
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="Root/Center/Levels/Level2" unique_id=964019917]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Number" type="Label" parent="Root/Center/Levels/Level2/Content" unique_id=1480174214]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23, 0.13, 0.06, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 30
+text = "RIVER 2"
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="Root/Center/Levels/Level2/Content" unique_id=824502774]
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+text = "Autumn Bend"
+horizontal_alignment = 1
+
+[node name="Stars" type="Control" parent="Root/Center/Levels/Level2/Content" unique_id=470558035]
+custom_minimum_size = Vector2(240, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+script = ExtResource("3_cfe2f")
+
+[node name="Status" type="Label" parent="Root/Center/Levels/Level2/Content" unique_id=1806462681]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23, 0.13, 0.06, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 28
+text = "LOCKED"
+horizontal_alignment = 1
+
+[node name="Level3" type="Button" parent="Root/Center/Levels" unique_id=1444295463]
+custom_minimum_size = Vector2(430, 250)
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="Root/Center/Levels/Level3" unique_id=510029073]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Number" type="Label" parent="Root/Center/Levels/Level3/Content" unique_id=1181000182]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23, 0.13, 0.06, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 30
+text = "RIVER 3"
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="Root/Center/Levels/Level3/Content" unique_id=1339773198]
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+text = "Frozen Rapids"
+horizontal_alignment = 1
+
+[node name="Stars" type="Control" parent="Root/Center/Levels/Level3/Content" unique_id=604635111]
+custom_minimum_size = Vector2(240, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+script = ExtResource("3_cfe2f")
+
+[node name="Status" type="Label" parent="Root/Center/Levels/Level3/Content" unique_id=1387719907]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23, 0.13, 0.06, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 28
+text = "LOCKED"
+horizontal_alignment = 1
+
+[node name="Hint" type="Label" parent="Root/Center" unique_id=975419466]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Hold the phone sideways  -  tilt left / right to steer  -  tilt back to brake"
+horizontal_alignment = 1
+
+[node name="MuteButton" type="Button" parent="Root" unique_id=1507917122]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -112.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = 76.0
+focus_mode = 0
+
+[node name="Speaker" type="Control" parent="Root/MuteButton" unique_id=2035823431]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+mouse_filter = 2
+script = ExtResource("4_6ik4u")

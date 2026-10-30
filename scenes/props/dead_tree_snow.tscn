@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://6kvpid0jtlmn"]
+
+[ext_resource type="PackedScene" uid="uid://d2y32v3wcxa7u" path="res://assets/models/nature/dead_tree_snow/dead_tree_snow.glb" id="1_4p6ej"]
+
+[node name="DeadTreeSnow" type="Node3D" unique_id=1992169830]
+
+[node name="Model" parent="." unique_id=1305974672 instance=ExtResource("1_4p6ej")]

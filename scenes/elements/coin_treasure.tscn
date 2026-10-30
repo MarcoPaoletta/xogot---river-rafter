@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cusk51x612lmj"]
+
+[ext_resource type="Script" uid="uid://go07pmd2mr1g" path="res://scripts/elements/coin.gd" id="1_x067g"]
+[ext_resource type="Material" uid="uid://cl1xncadnjthn" path="res://assets/materials/coin_gold.tres" id="2_478gf"]
+[ext_resource type="PackedScene" uid="uid://b1cm3yb6vn7ce" path="res://scenes/fx/coin_burst.tscn" id="2_mkk68"]
+[ext_resource type="ArrayMesh" uid="uid://dreiuo72stbdh" path="res://assets/models/props/star_coin/star_coin_mesh.res" id="3_mkk68"]
+[ext_resource type="Material" uid="uid://heli23qr0oxv" path="res://assets/materials/pm_coin_sparkle.tres" id="4_wlbmr"]
+[ext_resource type="QuadMesh" uid="uid://c6tekvi0h2o5j" path="res://assets/materials/mesh_sparkle.tres" id="5_2uc54"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_el47b"]
+radius = 1.7
+
+[node name="CoinTreasure" type="Node3D" unique_id=1267987475]
+script = ExtResource("1_x067g")
+value = 10
+burst_scene = ExtResource("2_mkk68")
+
+[node name="Model" type="Node3D" parent="." unique_id=501443915]
+
+[node name="StarCoin" type="MeshInstance3D" parent="Model" unique_id=1515110827]
+transform = Transform3D(330, 0, 0, 0, -1.4424758e-05, 330, 0, -330, -1.4424758e-05, 0, 1.9, 0)
+material_override = ExtResource("2_478gf")
+mesh = ExtResource("3_mkk68")
+
+[node name="Glow" type="OmniLight3D" parent="Model" unique_id=1210602310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0)
+light_color = Color(1, 0.8, 0.3, 1)
+light_energy = 2.0
+
+[node name="Sparkles" type="GPUParticles3D" parent="." unique_id=1532380537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0)
+amount = 10
+lifetime = 0.9
+local_coords = true
+process_material = ExtResource("4_wlbmr")
+draw_pass_1 = ExtResource("5_2uc54")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1627273384]
+collision_mask = 0
+monitoring = false
+
+[node name="Shape" type="CollisionShape3D" parent="Area3D" unique_id=2079762871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0)
+shape = SubResource("SphereShape3D_el47b")

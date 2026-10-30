@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://3g1ohe5fvi0k"]
+
+[ext_resource type="Script" uid="uid://bik514byqe77b" path="res://scripts/ui/debug_panel.gd" id="1_osiar"]
+[ext_resource type="Theme" uid="uid://780yw8mlatmt" path="res://assets/ui/theme.tres" id="2_e7ebm"]
+
+[node name="DebugPanel" type="CanvasLayer" unique_id=1345402770]
+layer = 40
+script = ExtResource("1_osiar")
+
+[node name="Root" type="PanelContainer" parent="." unique_id=1989158600]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -390.0
+offset_right = 592.0
+offset_bottom = 390.0
+theme = ExtResource("2_e7ebm")
+
+[node name="VBox" type="VBoxContainer" parent="Root" unique_id=2043653098]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Root/VBox" unique_id=966274775]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "DEBUG  (F1 / 3 fingers)"
+
+[node name="AddCoins" type="Button" parent="Root/VBox" unique_id=469614805]
+custom_minimum_size = Vector2(440, 84)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "+10 coins"
+
+[node name="Finish" type="Button" parent="Root/VBox" unique_id=485579270]
+custom_minimum_size = Vector2(440, 84)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Jump to finish"
+
+[node name="SkipLevel" type="Button" parent="Root/VBox" unique_id=56612233]
+custom_minimum_size = Vector2(440, 84)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Skip to next river"
+
+[node name="GodMode" type="CheckButton" parent="Root/VBox" unique_id=2084095268]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "God mode (no damage)"
+
+[node name="Speed" type="HBoxContainer" parent="Root/VBox" unique_id=1810222804]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="S1" type="Button" parent="Root/VBox/Speed" unique_id=1838046057]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+text = "1x"
+
+[node name="S2" type="Button" parent="Root/VBox/Speed" unique_id=1239103640]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+text = "2x"
+
+[node name="S4" type="Button" parent="Root/VBox/Speed" unique_id=1771120501]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+text = "4x"
+
+[node name="EraseSave" type="Button" parent="Root/VBox" unique_id=1699807495]
+custom_minimum_size = Vector2(440, 84)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Erase save, start over"
+
+[node name="Close" type="Button" parent="Root/VBox" unique_id=261845573]
+custom_minimum_size = Vector2(440, 84)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Close"

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d0ckrc061y47y"]
+
+[ext_resource type="Script" uid="uid://5gturl21v6sn" path="res://scripts/elements/one_shot_fx.gd" id="1_ur2vt"]
+[ext_resource type="Material" uid="uid://d0hq87ah1lgia" path="res://assets/materials/pm_splash.tres" id="2_hl13f"]
+[ext_resource type="QuadMesh" uid="uid://bbmp3rvpmft1v" path="res://assets/materials/mesh_puff.tres" id="3_uanrj"]
+[ext_resource type="Material" uid="uid://dwcm7qre61sn" path="res://assets/materials/pm_splash_foam.tres" id="4_hl13f"]
+[ext_resource type="QuadMesh" uid="uid://cm36loyrqsjqt" path="res://assets/materials/mesh_foam_patch.tres" id="5_uanrj"]
+
+[node name="SplashBurst" type="Node3D" unique_id=23649189]
+script = ExtResource("1_ur2vt")
+
+[node name="Droplets" type="GPUParticles3D" parent="." unique_id=1066271521]
+emitting = false
+amount = 28
+lifetime = 0.9
+one_shot = true
+explosiveness = 0.95
+process_material = ExtResource("2_hl13f")
+draw_pass_1 = ExtResource("3_uanrj")
+
+[node name="Ring" type="GPUParticles3D" parent="." unique_id=1689553131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0)
+emitting = false
+amount = 12
+lifetime = 1.3
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource("4_hl13f")
+draw_pass_1 = ExtResource("5_uanrj")

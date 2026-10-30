@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bbgtir8kx5rt4"]
+
+[ext_resource type="PackedScene" uid="uid://b3c58at10tb2f" path="res://assets/models/nature/wood_log/wood_log.glb" id="1_n1qh6"]
+
+[node name="WoodLog" type="Node3D" unique_id=1653819283]
+
+[node name="Model" parent="." unique_id=1422532105 instance=ExtResource("1_n1qh6")]

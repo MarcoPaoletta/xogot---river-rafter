@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dbwl6yx3sww5d"]
+
+[ext_resource type="PackedScene" uid="uid://bs6vhv5oggi7m" path="res://assets/models/nature/willow/willow.glb" id="1_drs81"]
+
+[node name="Willow" type="Node3D" unique_id=837503505]
+
+[node name="Model" parent="." unique_id=754200998 instance=ExtResource("1_drs81")]

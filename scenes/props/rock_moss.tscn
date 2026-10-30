@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://tgcjjynkh0ak"]
+
+[ext_resource type="PackedScene" uid="uid://d0lpmw1ui41ab" path="res://assets/models/nature/rock_moss/rock_moss.glb" id="1_m7o53"]
+
+[node name="RockMoss" type="Node3D" unique_id=1583712166]
+
+[node name="Model" parent="." unique_id=1789377583 instance=ExtResource("1_m7o53")]

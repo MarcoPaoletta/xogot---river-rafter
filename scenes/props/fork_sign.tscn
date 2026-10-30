@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bsqrk64id3ixi"]
+
+[ext_resource type="PackedScene" uid="uid://bvonhpuxhnbud" path="res://assets/models/props/arrow_sign/arrow_sign.glb" id="1_683hb"]
+[ext_resource type="FontFile" uid="uid://dpd4npstiwluq" path="res://assets/fonts/LilitaOne-Regular.ttf" id="2_1tuwu"]
+
+[node name="ForkSign" type="Node3D" unique_id=1042511379]
+
+[node name="Model" parent="." unique_id=1873069455 instance=ExtResource("1_683hb")]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+
+[node name="Label" type="Label3D" parent="." unique_id=2117068482]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, 0)
+pixel_size = 0.008
+billboard = 2
+modulate = Color(1, 0.95, 0.8, 1)
+outline_modulate = Color(0.25, 0.12, 0.04, 1)
+text = "< CALM      WILD >"
+font = ExtResource("2_1tuwu")
+font_size = 96
+outline_size = 24

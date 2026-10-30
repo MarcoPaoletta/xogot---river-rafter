@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bo1sy4i117hkn"]
+
+[ext_resource type="Script" uid="uid://bbu2wfabb63u7" path="res://scripts/core/audio.gd" id="1_8wyu3"]
+
+[node name="Audio" type="Node" unique_id=1028188259]
+script = ExtResource("1_8wyu3")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=138155766]
+volume_db = -10.0
+
+[node name="Pool" type="Node" parent="." unique_id=1438543018]
+
+[node name="Sfx1" type="AudioStreamPlayer" parent="Pool" unique_id=687531713]
+
+[node name="Sfx2" type="AudioStreamPlayer" parent="Pool" unique_id=1252863587]
+
+[node name="Sfx3" type="AudioStreamPlayer" parent="Pool" unique_id=1726306991]
+
+[node name="Sfx4" type="AudioStreamPlayer" parent="Pool" unique_id=1051101578]
+
+[node name="Sfx5" type="AudioStreamPlayer" parent="Pool" unique_id=7572942]
+
+[node name="Sfx6" type="AudioStreamPlayer" parent="Pool" unique_id=855331186]
+
+[node name="Sfx7" type="AudioStreamPlayer" parent="Pool" unique_id=806599252]
+
+[node name="Sfx8" type="AudioStreamPlayer" parent="Pool" unique_id=1571856735]

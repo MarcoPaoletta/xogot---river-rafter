@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cqv7y77bj0h8s"]
+
+[ext_resource type="Script" uid="uid://cswg5q5y6ggkq" path="res://scripts/elements/critter.gd" id="1_852li"]
+[ext_resource type="PackedScene" uid="uid://d0ckrc061y47y" path="res://scenes/fx/splash_burst.tscn" id="2_47o1k"]
+[ext_resource type="PackedScene" uid="uid://tgcjjynkh0ak" path="res://scenes/props/rock_moss.tscn" id="2_gvvax"]
+[ext_resource type="PackedScene" uid="uid://b1ijoibh7fshe" path="res://assets/models/animals/bunny/bunny.glb" id="3_47o1k"]
+[ext_resource type="FontFile" uid="uid://dpd4npstiwluq" path="res://assets/fonts/LilitaOne-Regular.ttf" id="4_0a7jx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wv4uv"]
+radius = 1.5
+
+[node name="CritterBunny" type="Node3D" unique_id=1291523959]
+script = ExtResource("1_852li")
+splash_scene = ExtResource("2_47o1k")
+
+[node name="Rock" parent="." unique_id=1583712166 instance=ExtResource("2_gvvax")]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, -0.75, 0)
+
+[node name="Animal" type="Node3D" parent="." unique_id=2134028835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+
+[node name="Model" parent="Animal" unique_id=1194072745 instance=ExtResource("3_47o1k")]
+transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="Animal" unique_id=1940940248]
+collision_mask = 0
+monitoring = false
+
+[node name="Shape" type="CollisionShape3D" parent="Animal/Area3D" unique_id=1523326249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("SphereShape3D_wv4uv")
+
+[node name="Help" type="Label3D" parent="Animal" unique_id=1889687448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 0)
+pixel_size = 0.006
+billboard = 1
+modulate = Color(1, 0.92, 0.35, 1)
+outline_modulate = Color(0.25, 0.1, 0.02, 1)
+text = "HELP!"
+font = ExtResource("4_0a7jx")
+font_size = 72
+outline_size = 22

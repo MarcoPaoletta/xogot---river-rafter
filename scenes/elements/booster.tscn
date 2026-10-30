@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cjhstkfxqc4ba"]
+
+[ext_resource type="Script" uid="uid://d4ianblhe8s4h" path="res://scripts/elements/booster.gd" id="1_e44dh"]
+[ext_resource type="PackedScene" uid="uid://b1cm3yb6vn7ce" path="res://scenes/fx/coin_burst.tscn" id="2_5pmbc"]
+[ext_resource type="PackedScene" uid="uid://cro5u4qrli3ts" path="res://assets/models/props/gem_blue/gem_blue.glb" id="2_e67dl"]
+[ext_resource type="Material" uid="uid://b3k83a2riu62o" path="res://assets/materials/pm_booster_sparkle.tres" id="3_5pmbc"]
+[ext_resource type="QuadMesh" uid="uid://c6tekvi0h2o5j" path="res://assets/materials/mesh_sparkle.tres" id="4_0v0cd"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2bkkl"]
+radius = 1.3
+
+[node name="Booster" type="Node3D" unique_id=942831011]
+script = ExtResource("1_e44dh")
+burst_scene = ExtResource("2_5pmbc")
+
+[node name="Model" type="Node3D" parent="." unique_id=1694720081]
+
+[node name="Gem" parent="Model" unique_id=1687871212 instance=ExtResource("2_e67dl")]
+transform = Transform3D(2.6, 0, 0, 0, 2.6, 0, 0, 0, 2.6, 0, 1.6, 0)
+
+[node name="Glow" type="OmniLight3D" parent="Model" unique_id=1764082618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+light_color = Color(0.35, 0.8, 1, 1)
+light_energy = 2.5
+
+[node name="Sparkles" type="GPUParticles3D" parent="." unique_id=1645702236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+amount = 12
+lifetime = 1.2
+local_coords = true
+process_material = ExtResource("3_5pmbc")
+draw_pass_1 = ExtResource("4_0v0cd")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=643316787]
+collision_mask = 0
+monitoring = false
+
+[node name="Shape" type="CollisionShape3D" parent="Area3D" unique_id=631452074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+shape = SubResource("SphereShape3D_2bkkl")

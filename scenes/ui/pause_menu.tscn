@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dkvwqx4i8b75t"]
+
+[ext_resource type="Script" uid="uid://d2pr0jxcdi36g" path="res://scripts/ui/pause_menu.gd" id="1_0lmf7"]
+[ext_resource type="Theme" uid="uid://780yw8mlatmt" path="res://assets/ui/theme.tres" id="2_f6eus"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=334101625]
+layer = 30
+script = ExtResource("1_0lmf7")
+
+[node name="Root" type="Control" parent="." unique_id=1633511732]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_f6eus")
+
+[node name="Dim" type="ColorRect" parent="Root" unique_id=738132917]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.01, 0.04, 0.06, 0.6)
+
+[node name="Panel" type="PanelContainer" parent="Root" unique_id=115437065]
+custom_minimum_size = Vector2(760, 0)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -336.0
+offset_top = -421.0
+offset_right = 336.0
+offset_bottom = 421.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/Panel" unique_id=1777941884]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Title" type="Label" parent="Root/Panel/VBox" unique_id=376596922]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.86, 0.3, 1)
+theme_override_font_sizes/font_size = 96
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="Root/Panel/VBox" unique_id=1157202932]
+custom_minimum_size = Vector2(560, 104)
+layout_mode = 2
+text = "Resume"
+
+[node name="Restart" type="Button" parent="Root/Panel/VBox" unique_id=1241240716]
+custom_minimum_size = Vector2(560, 104)
+layout_mode = 2
+text = "Restart river"
+
+[node name="Calibrate" type="Button" parent="Root/Panel/VBox" unique_id=1918149993]
+custom_minimum_size = Vector2(560, 104)
+layout_mode = 2
+text = "Recalibrate tilt"
+
+[node name="InvertSteer" type="CheckButton" parent="Root/Panel/VBox" unique_id=1647025794]
+layout_mode = 2
+text = "Invert tilt steering"
+
+[node name="Sensitivity" type="HBoxContainer" parent="Root/Panel/VBox" unique_id=980712355]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Root/Panel/VBox/Sensitivity" unique_id=969992400]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Tilt sensitivity"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Sensitivity" unique_id=1691771369]
+custom_minimum_size = Vector2(260, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.5
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="Menu" type="Button" parent="Root/Panel/VBox" unique_id=658086453]
+custom_minimum_size = Vector2(560, 104)
+layout_mode = 2
+text = "Main menu"

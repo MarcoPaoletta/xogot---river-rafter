@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b67pennhnwfcj"]
+
+[ext_resource type="Script" uid="uid://cdfrmr00ijq2f" path="res://scripts/core/main.gd" id="1_choun"]
+[ext_resource type="PackedScene" uid="uid://cdqat0hg4bgyi" path="res://scenes/levels/level_1.tscn" id="2_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://b7rfmckugnw5b" path="res://scenes/elements/raft.tscn" id="3_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://ca7281pmeqxdu" path="res://scenes/elements/camera_rig.tscn" id="4_trceg"]
+[ext_resource type="PackedScene" uid="uid://b8aqprula8ydk" path="res://scenes/ui/hud.tscn" id="5_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://bv4pw2381v2xp" path="res://scenes/ui/title_screen.tscn" id="6_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://dkvwqx4i8b75t" path="res://scenes/ui/pause_menu.tscn" id="7_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://bjvtqejfioh4k" path="res://scenes/ui/result_screen.tscn" id="8_muem4"]
+[ext_resource type="PackedScene" uid="uid://3g1ohe5fvi0k" path="res://scenes/ui/debug_panel.tscn" id="9_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://dj8v3bc1b48sc" path="res://scenes/ui/screen_fade.tscn" id="10_0ld40"]
+[ext_resource type="PackedScene" uid="uid://bhxeptx0n7lkh" path="res://scenes/ui/fx_tuner.tscn" id="11_ya4ey"]
+
+[node name="Main" type="Node3D" unique_id=1353591089]
+script = ExtResource("1_choun")
+
+[node name="LevelSlot" type="Node3D" parent="." unique_id=697761250]
+
+[node name="Level1" parent="LevelSlot" unique_id=1133088887 instance=ExtResource("2_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.763779, -1.6661758, -4.843067)
+
+[node name="Raft" parent="." unique_id=1257346422 instance=ExtResource("3_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="CameraRig" parent="." unique_id=1448084180 instance=ExtResource("4_trceg")]
+transform = Transform3D(1, 0, 0, 0, 0.95105654, 0.309017, 0, -0.309017, 0.95105654, 0, 4.3, 12.5)
+
+[node name="HUD" parent="." unique_id=1052019731 instance=ExtResource("5_a8y0u")]
+
+[node name="TitleScreen" parent="." unique_id=1990750282 instance=ExtResource("6_jkv2x")]
+
+[node name="PauseMenu" parent="." unique_id=334101625 instance=ExtResource("7_jbj1t")]
+
+[node name="ResultScreen" parent="." unique_id=1408579046 instance=ExtResource("8_muem4")]
+
+[node name="DebugPanel" parent="." unique_id=1345402770 instance=ExtResource("9_dp3eg")]
+
+[node name="ScreenFade" parent="." unique_id=1385406504 instance=ExtResource("10_0ld40")]
+
+[node name="FxTuner" parent="." unique_id=1881494465 instance=ExtResource("11_ya4ey")]

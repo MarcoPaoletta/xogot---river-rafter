@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://co211x1dxvxk0"]
+
+[ext_resource type="Material" uid="uid://b5vwpit6wg4x8" path="res://assets/materials/pm_fall_foam.tres" id="1_qghvc"]
+[ext_resource type="QuadMesh" uid="uid://cm36loyrqsjqt" path="res://assets/materials/mesh_foam_patch.tres" id="2_otq3c"]
+[ext_resource type="Material" uid="uid://cypva6yrx26og" path="res://assets/materials/pm_fall_spray.tres" id="3_j8w4e"]
+[ext_resource type="QuadMesh" uid="uid://bbmp3rvpmft1v" path="res://assets/materials/mesh_puff.tres" id="4_o5n3x"]
+[ext_resource type="QuadMesh" uid="uid://calgsdgm1grpd" path="res://assets/materials/mesh_foam_ring_flat.tres" id="5_l4moh"]
+
+[node name="WaterfallMist" type="Node3D" unique_id=1997674622]
+
+[node name="Foam" type="GPUParticles3D" parent="." unique_id=1195126334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0)
+amount = 40
+lifetime = 1.8
+process_material = ExtResource("1_qghvc")
+draw_pass_1 = ExtResource("2_otq3c")
+
+[node name="Spray" type="GPUParticles3D" parent="." unique_id=2076874574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+amount = 36
+process_material = ExtResource("3_j8w4e")
+draw_pass_1 = ExtResource("4_o5n3x")
+
+[node name="Ring" type="MeshInstance3D" parent="." unique_id=16531774]
+transform = Transform3D(3.6, 0, 0, 0, 1, 0, 0, 0, 2.6, 0, 0.15, 0)
+cast_shadow = 0
+mesh = ExtResource("5_l4moh")

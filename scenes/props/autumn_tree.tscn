@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b3pu2scx4cv73"]
+
+[ext_resource type="PackedScene" uid="uid://gwjyjr4i1ie8" path="res://assets/models/nature/autumn_tree/autumn_tree.glb" id="1_faeb4"]
+
+[node name="AutumnTree" type="Node3D" unique_id=1968321684]
+
+[node name="Model" parent="." unique_id=259999976 instance=ExtResource("1_faeb4")]

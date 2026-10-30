@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cn6vk11yk3wq8"]
+
+[ext_resource type="ArrayMesh" uid="uid://ctaqtxpr675ar" path="res://assets/models/nature/cloud/cloud_mesh.res" id="1_l01yq"]
+
+[node name="Cloud" type="Node3D" unique_id=458959183]
+
+[node name="Model" type="MeshInstance3D" parent="." unique_id=717531766]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, 100, 0, -100, -4.371139e-06, 0, 0, 0)
+cast_shadow = 0
+mesh = ExtResource("1_l01yq")

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dokebxdl2l2tp"]
+
+[ext_resource type="Script" uid="uid://dokufuycin6ao" path="res://scripts/elements/whirlpool.gd" id="1_yysfm"]
+[ext_resource type="QuadMesh" uid="uid://b3dxy5tnsfltt" path="res://assets/materials/mesh_whirlpool.tres" id="2_xfm65"]
+[ext_resource type="Material" uid="uid://b5vwpit6wg4x8" path="res://assets/materials/pm_fall_foam.tres" id="3_adikf"]
+[ext_resource type="QuadMesh" uid="uid://cm36loyrqsjqt" path="res://assets/materials/mesh_foam_patch.tres" id="4_bekp4"]
+
+[node name="Whirlpool" type="Node3D" unique_id=2063705829]
+script = ExtResource("1_yysfm")
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=1124968444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+cast_shadow = 0
+mesh = ExtResource("2_xfm65")
+
+[node name="Spray" type="GPUParticles3D" parent="." unique_id=1287234560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0)
+amount = 18
+lifetime = 1.4
+process_material = ExtResource("3_adikf")
+draw_pass_1 = ExtResource("4_bekp4")

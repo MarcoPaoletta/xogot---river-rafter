@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://5ht78m6seo8g"]
+
+[ext_resource type="Script" uid="uid://bax7mchw8fnj6" path="res://scripts/elements/rapids.gd" id="1_vd7ht"]
+[ext_resource type="BoxMesh" uid="uid://b1b65wcqka4qy" path="res://assets/materials/mesh_chevron_bar.tres" id="2_xwpbs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_03wb3"]
+size = Vector3(15, 3, 7)
+
+[node name="Rapids" type="Node3D" unique_id=1322387083]
+script = ExtResource("1_vd7ht")
+
+[node name="Chevrons" type="Node3D" parent="." unique_id=559831791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0)
+
+[node name="Chevron1" type="Node3D" parent="Chevrons" unique_id=208134346]
+
+[node name="Left" type="MeshInstance3D" parent="Chevrons/Chevron1" unique_id=895826228]
+transform = Transform3D(0.86074203, 0, 0.50904137, 0, 1, 0, -0.50904137, 0, 0.86074203, -1.1, 0, 0.65)
+mesh = ExtResource("2_xwpbs")
+
+[node name="Right" type="MeshInstance3D" parent="Chevrons/Chevron1" unique_id=1865348454]
+transform = Transform3D(0.86074203, 0, -0.50904137, 0, 1, 0, 0.50904137, 0, 0.86074203, 1.1, 0, 0.65)
+mesh = ExtResource("2_xwpbs")
+
+[node name="Chevron2" type="Node3D" parent="Chevrons" unique_id=1917601373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="Left" type="MeshInstance3D" parent="Chevrons/Chevron2" unique_id=1276222084]
+transform = Transform3D(0.86074203, 0, 0.50904137, 0, 1, 0, -0.50904137, 0, 0.86074203, -1.1, 0, 0.65)
+mesh = ExtResource("2_xwpbs")
+
+[node name="Right" type="MeshInstance3D" parent="Chevrons/Chevron2" unique_id=174297820]
+transform = Transform3D(0.86074203, 0, -0.50904137, 0, 1, 0, 0.50904137, 0, 0.86074203, 1.1, 0, 0.65)
+mesh = ExtResource("2_xwpbs")
+
+[node name="Chevron3" type="Node3D" parent="Chevrons" unique_id=1222419720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Left" type="MeshInstance3D" parent="Chevrons/Chevron3" unique_id=825939498]
+transform = Transform3D(0.86074203, 0, 0.50904137, 0, 1, 0, -0.50904137, 0, 0.86074203, -1.1, 0, 0.65)
+mesh = ExtResource("2_xwpbs")
+
+[node name="Right" type="MeshInstance3D" parent="Chevrons/Chevron3" unique_id=583861251]
+transform = Transform3D(0.86074203, 0, -0.50904137, 0, 1, 0, 0.50904137, 0, 0.86074203, 1.1, 0, 0.65)
+mesh = ExtResource("2_xwpbs")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2095019954]
+collision_mask = 0
+monitoring = false
+
+[node name="Shape" type="CollisionShape3D" parent="Area3D" unique_id=1416402106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -3)
+shape = SubResource("BoxShape3D_03wb3")

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://2aqs1xj8eadg"]
+
+[ext_resource type="Script" uid="uid://bjthgqeys44h8" path="res://scripts/elements/bird_flock.gd" id="1_dj0vu"]
+[ext_resource type="PackedScene" uid="uid://byribdatlju54" path="res://assets/models/animals/bird/bird.glb" id="2_uqjyo"]
+
+[node name="BirdFlock" type="Node3D" unique_id=536894964]
+script = ExtResource("1_dj0vu")
+
+[node name="Bird1" parent="." unique_id=259845625 instance=ExtResource("2_uqjyo")]
+transform = Transform3D(-1.3996537, 0, -0.031137452, 0, 1.4, 0, 0.031137452, 0, -1.3996537, 0, 0, 0)
+
+[node name="Bird2" parent="." unique_id=521622593 instance=ExtResource("2_uqjyo")]
+transform = Transform3D(-1.28871, 0, -0.54701585, 0, 1.4, 0, 0.54701585, 0, -1.28871, 0.9, 0, 0.5)
+
+[node name="Bird3" parent="." unique_id=1031550712 instance=ExtResource("2_uqjyo")]
+transform = Transform3D(-1.3687913, 0, 0.29395625, 0, 1.4, 0, -0.29395625, 0, -1.3687913, -0.8, 0, 0.7)
+
+[node name="Bird4" parent="." unique_id=1900096105 instance=ExtResource("2_uqjyo")]
+transform = Transform3D(-1.1306086, 0, -0.825666, 0, 1.4, 0, 0.825666, 0, -1.1306086, 0.4, 0, -0.9)
+
+[node name="Bird5" parent="." unique_id=1696410027 instance=ExtResource("2_uqjyo")]
+transform = Transform3D(-0.1089071, 0, 1.3957576, 0, 1.4, 0, -1.3957576, 0, -0.1089071, -0.5, 0, -0.6)

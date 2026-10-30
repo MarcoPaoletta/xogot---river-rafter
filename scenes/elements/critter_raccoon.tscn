@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b2lfymgvlsb33"]
+
+[ext_resource type="Script" uid="uid://cswg5q5y6ggkq" path="res://scripts/elements/critter.gd" id="1_4uwtv"]
+[ext_resource type="PackedScene" uid="uid://d0ckrc061y47y" path="res://scenes/fx/splash_burst.tscn" id="2_6bqim"]
+[ext_resource type="PackedScene" uid="uid://ds6ggt3siuyc0" path="res://scenes/props/rock_large_b.tscn" id="2_fwtb4"]
+[ext_resource type="PackedScene" uid="uid://bdlhtj2s5xol1" path="res://assets/models/animals/raccoon/raccoon.glb" id="3_6bqim"]
+[ext_resource type="FontFile" uid="uid://dpd4npstiwluq" path="res://assets/fonts/LilitaOne-Regular.ttf" id="4_7bqu0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vthn5"]
+radius = 1.5
+
+[node name="CritterRaccoon" type="Node3D" unique_id=1679415319]
+script = ExtResource("1_4uwtv")
+splash_scene = ExtResource("2_6bqim")
+
+[node name="Rock" parent="." unique_id=904471076 instance=ExtResource("2_fwtb4")]
+transform = Transform3D(0.34, 0, 0, 0, 0.34, 0, 0, 0, 0.34, 0, -0.55, 0)
+
+[node name="Animal" type="Node3D" parent="." unique_id=1760706119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+
+[node name="Model" parent="Animal" unique_id=2010534988 instance=ExtResource("3_6bqim")]
+transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="Animal" unique_id=1097352586]
+collision_mask = 0
+monitoring = false
+
+[node name="Shape" type="CollisionShape3D" parent="Animal/Area3D" unique_id=1651943560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("SphereShape3D_vthn5")
+
+[node name="Help" type="Label3D" parent="Animal" unique_id=477876170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 0)
+pixel_size = 0.006
+billboard = 1
+modulate = Color(1, 0.92, 0.35, 1)
+outline_modulate = Color(0.25, 0.1, 0.02, 1)
+text = "HELP!"
+font = ExtResource("4_7bqu0")
+font_size = 72
+outline_size = 22

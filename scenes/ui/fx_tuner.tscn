@@ -1,0 +1,1599 @@
+[gd_scene format=3 uid="uid://bhxeptx0n7lkh"]
+
+[ext_resource type="Script" uid="uid://dwpkbvgi55p7v" path="res://scripts/ui/fx_tuner.gd" id="1_8bvwo"]
+[ext_resource type="Theme" uid="uid://780yw8mlatmt" path="res://assets/ui/theme.tres" id="2_6gjn0"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8bvwo"]
+color = Color(1, 0.82, 0.32, 0.45)
+thickness = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6gjn0"]
+color = Color(1, 0.82, 0.32, 0.45)
+thickness = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7q5hx"]
+color = Color(1, 0.82, 0.32, 0.45)
+thickness = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_kebby"]
+color = Color(1, 0.82, 0.32, 0.45)
+thickness = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_cqtt3"]
+color = Color(1, 0.82, 0.32, 0.45)
+thickness = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_nflhm"]
+color = Color(1, 0.82, 0.32, 0.45)
+thickness = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ua7so"]
+color = Color(1, 0.82, 0.32, 0.45)
+thickness = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7ooai"]
+color = Color(1, 0.82, 0.32, 0.45)
+thickness = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7ktbi"]
+color = Color(1, 0.82, 0.32, 0.45)
+thickness = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_iflve"]
+color = Color(1, 0.82, 0.32, 0.45)
+thickness = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0w6ct"]
+color = Color(1, 0.82, 0.32, 0.45)
+thickness = 3
+
+[node name="FxTuner" type="CanvasLayer" unique_id=1881494465]
+layer = 45
+script = ExtResource("1_8bvwo")
+
+[node name="Root" type="Control" parent="." unique_id=2111851547]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_6gjn0")
+
+[node name="Panel" type="PanelContainer" parent="Root" unique_id=1108437637]
+layout_mode = 0
+anchor_right = 0.44
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_bottom = -16.0
+
+[node name="VBox" type="VBoxContainer" parent="Root/Panel" unique_id=1980270994]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Header" type="HBoxContainer" parent="Root/Panel/VBox" unique_id=1687897015]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Page1" type="Button" parent="Root/Panel/VBox/Header" unique_id=2018157295]
+custom_minimum_size = Vector2(280, 78)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "1 Wake & Foam"
+
+[node name="Page2" type="Button" parent="Root/Panel/VBox/Header" unique_id=202815788]
+custom_minimum_size = Vector2(280, 78)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "2 Light & Env"
+
+[node name="Gap" type="Control" parent="Root/Panel/VBox/Header" unique_id=389552146]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Close" type="Button" parent="Root/Panel/VBox/Header" unique_id=2021507876]
+custom_minimum_size = Vector2(90, 78)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "X"
+
+[node name="LevelSelect" type="HBoxContainer" parent="Root/Panel/VBox" unique_id=907177935]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="L1" type="Button" parent="Root/Panel/VBox/LevelSelect" unique_id=1416097755]
+custom_minimum_size = Vector2(240, 78)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "Pine Gorge"
+
+[node name="L2" type="Button" parent="Root/Panel/VBox/LevelSelect" unique_id=1696914083]
+custom_minimum_size = Vector2(240, 78)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "Autumn Bend"
+
+[node name="L3" type="Button" parent="Root/Panel/VBox/LevelSelect" unique_id=760483336]
+custom_minimum_size = Vector2(250, 78)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "Frozen Rapids"
+
+[node name="Scroll" type="ScrollContainer" parent="Root/Panel/VBox" unique_id=696452789]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Pages" type="VBoxContainer" parent="Root/Panel/VBox/Scroll" unique_id=419491949]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Page1Rows" type="VBoxContainer" parent="Root/Panel/VBox/Scroll/Pages" unique_id=316252751]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="Header_wake_on" type="VBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1287422539]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/Header_wake_on" unique_id=718634981]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.32, 1)
+theme_override_font_sizes/font_size = 36
+text = "WAKE TRAIL"
+vertical_alignment = 2
+
+[node name="Line" type="HSeparator" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/Header_wake_on" unique_id=1235115116]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_8bvwo")
+
+[node name="wake_on" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1424166248]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_on" unique_id=625331088]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Wake on"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_on" unique_id=2120093382]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_on" unique_id=979369474]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="wake_amount" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=162777434]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_amount" unique_id=328207821]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Wake amount"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_amount" unique_id=661654723]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 4.0
+max_value = 200.0
+value = 4.0
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_amount" unique_id=534680480]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="wake_lifetime" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1080659079]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_lifetime" unique_id=1157319044]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Wake lifetime"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_lifetime" unique_id=703740422]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.3
+max_value = 5.0
+step = 0.05
+value = 0.3
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_lifetime" unique_id=2122088577]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="wake_height" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=2132372773]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_height" unique_id=530139317]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Wake height"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_height" unique_id=1363594085]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.02
+max_value = 0.8
+step = 0.01
+value = 0.02
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_height" unique_id=1422889049]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="wake_back" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=219641540]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_back" unique_id=1760439046]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Wake offset back"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_back" unique_id=10663831]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 3.5
+step = 0.05
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_back" unique_id=204889073]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="wake_width" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=299287361]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_width" unique_id=17474236]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Wake emit width"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_width" unique_id=1878330067]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.05
+max_value = 2.5
+step = 0.05
+value = 0.05
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_width" unique_id=847560025]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="wake_spread" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1392055844]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_spread" unique_id=221269777]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Wake spread"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_spread" unique_id=79113878]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 90.0
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_spread" unique_id=417424533]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="wake_vel_min" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1289300742]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_vel_min" unique_id=1683547236]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Wake speed min"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_vel_min" unique_id=685240539]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 6.0
+step = 0.05
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_vel_min" unique_id=636026438]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="wake_vel_max" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1599427503]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_vel_max" unique_id=1503920683]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Wake speed max"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_vel_max" unique_id=2022785109]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 8.0
+step = 0.05
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_vel_max" unique_id=1262520470]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="wake_scale_min" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=31599383]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_scale_min" unique_id=2030457616]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Patch size min"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_scale_min" unique_id=1100014124]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.1
+max_value = 4.0
+step = 0.05
+value = 0.1
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_scale_min" unique_id=1146931439]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="wake_scale_max" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=33737945]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_scale_max" unique_id=439282287]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Patch size max"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_scale_max" unique_id=1654247874]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.1
+max_value = 5.0
+step = 0.05
+value = 0.1
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/wake_scale_max" unique_id=194845535]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="Header_patch_opacity" type="VBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=835104305]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/Header_patch_opacity" unique_id=1705999655]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.32, 1)
+theme_override_font_sizes/font_size = 36
+text = "WAKE FOAM LOOK"
+vertical_alignment = 2
+
+[node name="Line" type="HSeparator" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/Header_patch_opacity" unique_id=737022209]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_6gjn0")
+
+[node name="patch_opacity" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1554405152]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/patch_opacity" unique_id=1808022000]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Patch opacity"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/patch_opacity" unique_id=957574891]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/patch_opacity" unique_id=1325073291]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="patch_breakup" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=106036355]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/patch_breakup" unique_id=2131848185]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Patch breakup"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/patch_breakup" unique_id=1992594250]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.1
+max_value = 0.95
+step = 0.01
+value = 0.1
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/patch_breakup" unique_id=2078451452]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="patch_noise" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1901764790]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/patch_noise" unique_id=467954198]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Patch noise scale"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/patch_noise" unique_id=1384137226]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 16.0
+step = 0.1
+value = 1.0
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/patch_noise" unique_id=2095349197]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="Header_hull_on" type="VBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=2095978813]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/Header_hull_on" unique_id=922920377]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.32, 1)
+theme_override_font_sizes/font_size = 36
+text = "HULL FOAM"
+vertical_alignment = 2
+
+[node name="Line" type="HSeparator" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/Header_hull_on" unique_id=1540821889]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_7q5hx")
+
+[node name="hull_on" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=2084064670]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_on" unique_id=950753980]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Hull foam on"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_on" unique_id=867058385]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_on" unique_id=1876680537]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="hull_scale" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1499710209]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_scale" unique_id=1718394401]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Hull foam size"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_scale" unique_id=642766185]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.5
+max_value = 1.8
+step = 0.01
+value = 0.5
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_scale" unique_id=767342833]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="hull_opacity" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=92728847]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_opacity" unique_id=738806109]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Hull foam opacity"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_opacity" unique_id=1451254794]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_opacity" unique_id=1012506192]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="hull_inner" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1374803968]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_inner" unique_id=1834062385]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Hull ring inner"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_inner" unique_id=1956201588]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.3
+max_value = 0.95
+step = 0.01
+value = 0.3
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_inner" unique_id=1822497696]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="hull_outer" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=993804752]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_outer" unique_id=1356385916]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Hull ring outer"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_outer" unique_id=352786968]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.35
+max_value = 1.0
+step = 0.01
+value = 0.35
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_outer" unique_id=1839600126]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="hull_breakup" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=491960891]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_breakup" unique_id=712095935]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Hull breakup"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_breakup" unique_id=129682553]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.1
+max_value = 0.95
+step = 0.01
+value = 0.1
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/hull_breakup" unique_id=588642979]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="Header_spray_amount" type="VBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1261007578]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/Header_spray_amount" unique_id=1839274443]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.32, 1)
+theme_override_font_sizes/font_size = 36
+text = "SIDE SPRAY"
+vertical_alignment = 2
+
+[node name="Line" type="HSeparator" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/Header_spray_amount" unique_id=907525180]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_kebby")
+
+[node name="spray_amount" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=728007850]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/spray_amount" unique_id=846838359]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Spray amount"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/spray_amount" unique_id=585813753]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 80.0
+value = 1.0
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/spray_amount" unique_id=691384150]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="spray_scale" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1363617609]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/spray_scale" unique_id=1198100792]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Spray size"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/spray_scale" unique_id=1721430001]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.05
+max_value = 1.2
+step = 0.01
+value = 0.05
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/spray_scale" unique_id=826198989]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="Header_rock_foam_opacity" type="VBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1736240586]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/Header_rock_foam_opacity" unique_id=1836597205]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.32, 1)
+theme_override_font_sizes/font_size = 36
+text = "ROCK FOAM"
+vertical_alignment = 2
+
+[node name="Line" type="HSeparator" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/Header_rock_foam_opacity" unique_id=107491577]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_cqtt3")
+
+[node name="rock_foam_opacity" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=700937036]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/rock_foam_opacity" unique_id=194060169]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Rock foam opacity"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/rock_foam_opacity" unique_id=1567727122]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/rock_foam_opacity" unique_id=599605502]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="rock_foam_breakup" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=651764088]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/rock_foam_breakup" unique_id=1941802909]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Rock foam breakup"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/rock_foam_breakup" unique_id=1336336866]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.1
+max_value = 0.95
+step = 0.01
+value = 0.1
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/rock_foam_breakup" unique_id=1876751217]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="Header_water_streaks" type="VBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=996052170]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/Header_water_streaks" unique_id=71039119]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.32, 1)
+theme_override_font_sizes/font_size = 36
+text = "WATER SURFACE"
+vertical_alignment = 2
+
+[node name="Line" type="HSeparator" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/Header_water_streaks" unique_id=596503063]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_nflhm")
+
+[node name="water_streaks" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=44698514]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/water_streaks" unique_id=1126131157]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Water streaks"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/water_streaks" unique_id=1383283184]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/water_streaks" unique_id=914622791]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="water_bank_foam" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1603535239]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/water_bank_foam" unique_id=893184963]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Bank foam width"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/water_bank_foam" unique_id=2066337445]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 4.0
+step = 0.05
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/water_bank_foam" unique_id=1948505498]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="water_flow" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1898520374]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/water_flow" unique_id=981118127]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Water flow speed"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/water_flow" unique_id=2098012849]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 30.0
+step = 0.1
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/water_flow" unique_id=1581972659]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="water_waves" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows" unique_id=1620105398]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/water_waves" unique_id=1833499695]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Wave height"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/water_waves" unique_id=279386032]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 0.3
+step = 0.005
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page1Rows/water_waves" unique_id=1284641166]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="Page2Rows" type="VBoxContainer" parent="Root/Panel/VBox/Scroll/Pages" unique_id=270603818]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="Header_sun_energy" type="VBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=287356815]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/Header_sun_energy" unique_id=2018297549]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.32, 1)
+theme_override_font_sizes/font_size = 36
+text = "SUN"
+vertical_alignment = 2
+
+[node name="Line" type="HSeparator" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/Header_sun_energy" unique_id=472436288]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_ua7so")
+
+[node name="sun_energy" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=360569882]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_energy" unique_id=1393685010]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Sun energy"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_energy" unique_id=649313671]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 3.0
+step = 0.01
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_energy" unique_id=2145393378]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="sun_elevation" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=852912043]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_elevation" unique_id=1884442208]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Sun elevation"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_elevation" unique_id=933818543]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 2.0
+max_value = 89.0
+step = 0.5
+value = 2.0
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_elevation" unique_id=756370725]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="sun_azimuth" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=663440757]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_azimuth" unique_id=124401753]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Sun direction"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_azimuth" unique_id=1053932604]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -180.0
+max_value = 180.0
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_azimuth" unique_id=414338829]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="sun_warmth" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=2081632819]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_warmth" unique_id=612116898]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Sun warm / cool"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_warmth" unique_id=57294378]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -1.0
+max_value = 1.0
+step = 0.01
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_warmth" unique_id=235334610]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="sun_shadows" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=1248068255]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_shadows" unique_id=823248998]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Sun shadows"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_shadows" unique_id=1641550746]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sun_shadows" unique_id=1189923644]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="Header_ambient_energy" type="VBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=1691045588]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/Header_ambient_energy" unique_id=44120318]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.32, 1)
+theme_override_font_sizes/font_size = 36
+text = "AMBIENT & SKY"
+vertical_alignment = 2
+
+[node name="Line" type="HSeparator" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/Header_ambient_energy" unique_id=1433767577]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_7ooai")
+
+[node name="ambient_energy" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=1811199427]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/ambient_energy" unique_id=1871529865]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Ambient light"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/ambient_energy" unique_id=625480501]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 3.0
+step = 0.01
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/ambient_energy" unique_id=942436467]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="sky_contribution" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=802177413]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sky_contribution" unique_id=686854222]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Sky ambient share"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sky_contribution" unique_id=262959518]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sky_contribution" unique_id=368583754]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="sky_energy" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=136076187]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sky_energy" unique_id=1428282204]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Sky brightness"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sky_energy" unique_id=308151015]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.1
+max_value = 3.0
+step = 0.01
+value = 0.1
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/sky_energy" unique_id=1396859699]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="Header_exposure" type="VBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=790956238]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/Header_exposure" unique_id=1125619301]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.32, 1)
+theme_override_font_sizes/font_size = 36
+text = "EXPOSURE & GLOW"
+vertical_alignment = 2
+
+[node name="Line" type="HSeparator" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/Header_exposure" unique_id=1122305243]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_7ktbi")
+
+[node name="exposure" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=1186840885]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/exposure" unique_id=93133235]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Exposure"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/exposure" unique_id=619139445]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.2
+max_value = 3.0
+step = 0.01
+value = 0.2
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/exposure" unique_id=472958420]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="glow" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=961576981]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/glow" unique_id=741105161]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Glow"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/glow" unique_id=1914817650]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 2.0
+step = 0.01
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/glow" unique_id=1405971183]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="glow_threshold" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=1324156454]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/glow_threshold" unique_id=1704210634]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Glow threshold"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/glow_threshold" unique_id=434884373]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.3
+max_value = 2.0
+step = 0.01
+value = 0.3
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/glow_threshold" unique_id=1837852994]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="glow_bloom" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=559043332]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/glow_bloom" unique_id=356020440]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Glow bloom"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/glow_bloom" unique_id=2033957450]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 0.5
+step = 0.005
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/glow_bloom" unique_id=1397575293]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="Header_fog_density" type="VBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=1556465836]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/Header_fog_density" unique_id=1979945097]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.32, 1)
+theme_override_font_sizes/font_size = 36
+text = "FOG"
+vertical_alignment = 2
+
+[node name="Line" type="HSeparator" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/Header_fog_density" unique_id=287117050]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_iflve")
+
+[node name="fog_density" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=987730170]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/fog_density" unique_id=1009649766]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Fog density"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/fog_density" unique_id=1598063307]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 0.03
+step = 0.0005
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/fog_density" unique_id=2080312814]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="fog_sky" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=1366654221]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/fog_sky" unique_id=1854809574]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Fog on sky"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/fog_sky" unique_id=854798838]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/fog_sky" unique_id=1804979246]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="Header_contrast" type="VBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=146313368]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/Header_contrast" unique_id=1193515197]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.32, 1)
+theme_override_font_sizes/font_size = 36
+text = "COLOR GRADE"
+vertical_alignment = 2
+
+[node name="Line" type="HSeparator" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/Header_contrast" unique_id=1294488935]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_0w6ct")
+
+[node name="contrast" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=937125673]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/contrast" unique_id=652513637]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Contrast"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/contrast" unique_id=1913009774]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.5
+max_value = 1.7
+step = 0.01
+value = 0.5
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/contrast" unique_id=458107048]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="saturation" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=1285556648]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/saturation" unique_id=1014943288]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Saturation"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/saturation" unique_id=53269085]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 2.0
+step = 0.01
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/saturation" unique_id=1531518556]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="brightness" type="HBoxContainer" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows" unique_id=35415314]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/brightness" unique_id=1785405935]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Brightness"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/brightness" unique_id=63346899]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.4
+max_value = 1.6
+step = 0.01
+value = 0.4
+
+[node name="Value" type="Label" parent="Root/Panel/VBox/Scroll/Pages/Page2Rows/brightness" unique_id=682344580]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+
+[node name="Footer" type="HBoxContainer" parent="Root/Panel/VBox" unique_id=1253964296]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Save" type="Button" parent="Root/Panel/VBox/Footer" unique_id=1827907544]
+custom_minimum_size = Vector2(200, 78)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "Save"
+
+[node name="Reload" type="Button" parent="Root/Panel/VBox/Footer" unique_id=121966597]
+custom_minimum_size = Vector2(200, 78)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "Reload"
+
+[node name="Status" type="Label" parent="Root/Panel/VBox/Footer" unique_id=1978577660]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+autowrap_mode = 2

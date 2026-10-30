@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c56s7rt0hw76d"]
+
+[ext_resource type="PackedScene" uid="uid://m6g0qitm8m01" path="res://assets/models/nature/birch_tree_snow/birch_tree_snow.glb" id="1_keohi"]
+
+[node name="BirchTreeSnow" type="Node3D" unique_id=1409431876]
+
+[node name="Model" parent="." unique_id=845044826 instance=ExtResource("1_keohi")]
