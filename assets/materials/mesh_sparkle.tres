@@ -1,0 +1,12 @@
+[gd_resource type="QuadMesh" format=3 uid="uid://c6tekvi0h2o5j"]
+
+[ext_resource type="Shader" uid="uid://bfjkqihc8pouw" path="res://assets/shaders/sparkle.gdshader" id="1_op0wt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mvi3v"]
+render_priority = 0
+shader = ExtResource("1_op0wt")
+shader_parameter/intensity = 2.2
+
+[resource]
+material = SubResource("ShaderMaterial_mvi3v")
+size = Vector2(0.7, 0.7)

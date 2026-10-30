@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b1oamhugwj53l"]
+
+[ext_resource type="Shader" uid="uid://bfjkqihc8pouw" path="res://assets/shaders/sparkle.gdshader" id="1_p8ood"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_p8ood")
+shader_parameter/intensity = 2.2

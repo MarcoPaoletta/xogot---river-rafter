@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="RaftFx" format=3 uid="uid://bqqhd4famn3ws"]
+
+[ext_resource type="Script" uid="uid://decwhp5tjmci" path="res://scripts/core/raft_fx.gd" id="1_ul5kn"]
+
+[resource]
+script = ExtResource("1_ul5kn")

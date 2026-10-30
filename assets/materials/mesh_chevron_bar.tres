@@ -1,0 +1,8 @@
+[gd_resource type="BoxMesh" format=3 uid="uid://b1b65wcqka4qy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4t7p"]
+shading_mode = 0
+
+[resource]
+material = SubResource("StandardMaterial3D_d4t7p")
+size = Vector3(2.6, 0.06, 0.5)

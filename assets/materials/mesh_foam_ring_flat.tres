@@ -1,0 +1,20 @@
+[gd_resource type="QuadMesh" format=3 uid="uid://calgsdgm1grpd"]
+
+[ext_resource type="Shader" uid="uid://dsloyyyf0skwf" path="res://assets/shaders/foam.gdshader" id="1_4aa5a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_air8u"]
+render_priority = 0
+shader = ExtResource("1_4aa5a")
+shader_parameter/foam_color = Color(0.96, 0.99, 1, 1)
+shader_parameter/ring_mode = 1.0
+shader_parameter/ring_inner = 0.4
+shader_parameter/ring_outer = 0.62
+shader_parameter/breakup = 0.42
+shader_parameter/noise_scale = 9.0
+shader_parameter/scroll = 0.6
+shader_parameter/opacity = 0.9
+
+[resource]
+material = SubResource("ShaderMaterial_air8u")
+size = Vector2(4, 4)
+orientation = 1

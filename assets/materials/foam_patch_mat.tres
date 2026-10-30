@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://detfjnqhwshen"]
+
+[ext_resource type="Shader" uid="uid://dsloyyyf0skwf" path="res://assets/shaders/foam.gdshader" id="1_tkklw"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_tkklw")
+shader_parameter/foam_color = Color(0.96, 0.99, 1, 1)
+shader_parameter/ring_mode = 0.0
+shader_parameter/ring_inner = 0.42
+shader_parameter/ring_outer = 0.7
+shader_parameter/breakup = 0.5
+shader_parameter/noise_scale = 4.5
+shader_parameter/scroll = 0.35
+shader_parameter/opacity = 0.85

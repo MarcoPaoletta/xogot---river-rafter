@@ -1,0 +1,12 @@
+[gd_resource type="TorusMesh" format=3 uid="uid://cmvrwwx4hkpmu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8cwi"]
+shading_mode = 0
+albedo_color = Color(0.95, 0.99, 1, 1)
+
+[resource]
+material = SubResource("StandardMaterial3D_j8cwi")
+inner_radius = 1.05
+outer_radius = 1.55
+rings = 24
+ring_segments = 6

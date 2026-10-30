@@ -1,0 +1,12 @@
+[gd_resource type="QuadMesh" format=3 uid="uid://dn4qdm4yw0scw"]
+
+[ext_resource type="Shader" uid="uid://dibp1bm1idkqt" path="res://assets/shaders/pickup_ring.gdshader" id="1_l88od"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sco8v"]
+render_priority = 0
+shader = ExtResource("1_l88od")
+shader_parameter/intensity = 1.8
+shader_parameter/thickness = 0.12
+
+[resource]
+material = SubResource("ShaderMaterial_sco8v")

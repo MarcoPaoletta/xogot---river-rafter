@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://crs8a7feenx88"]
+
+[ext_resource type="Shader" uid="uid://dibp1bm1idkqt" path="res://assets/shaders/pickup_ring.gdshader" id="1_qefaw"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qefaw")
+shader_parameter/intensity = 1.8
+shader_parameter/thickness = 0.12

@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b046aibu2fpny"]
+
+[ext_resource type="Shader" uid="uid://busslnjjoc5gy" path="res://assets/shaders/screen_mood.gdshader" id="1_m4mrt"]
+
+[resource]
+shader = ExtResource("1_m4mrt")
+shader_parameter/tint = Color(0.95, 0.12, 0.18, 1)
+shader_parameter/intensity = 0.0
+shader_parameter/base_vignette = 0.28
+shader_parameter/grain = 0.035

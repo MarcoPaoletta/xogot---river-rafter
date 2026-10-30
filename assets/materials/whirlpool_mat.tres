@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ch1h578w7cpqb"]
+
+[ext_resource type="Shader" uid="uid://cafptpfg3mrkw" path="res://assets/shaders/whirlpool.gdshader" id="1_h0lwd"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_h0lwd")
+shader_parameter/foam_color = Color(0.95, 0.99, 1, 1)
+shader_parameter/deep_color = Color(0.02, 0.12, 0.18, 1)
+shader_parameter/arms = 3.0
+shader_parameter/twist = 7.5
+shader_parameter/speed = 2.4
+shader_parameter/opacity = 0.95
